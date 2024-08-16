@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.meta;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="meta_A")

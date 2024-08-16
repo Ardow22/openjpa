@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.meta.common.apps;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 import org.apache.openjpa.persistence.PersistentCollection;
 

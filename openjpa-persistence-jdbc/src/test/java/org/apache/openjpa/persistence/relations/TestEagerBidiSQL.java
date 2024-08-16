@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.relations;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.sql.DBDictionary;

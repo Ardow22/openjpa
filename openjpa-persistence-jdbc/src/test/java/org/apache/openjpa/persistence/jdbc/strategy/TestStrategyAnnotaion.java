@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.jdbc.strategy;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

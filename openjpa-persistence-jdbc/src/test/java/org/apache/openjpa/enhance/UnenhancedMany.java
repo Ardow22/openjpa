@@ -19,9 +19,9 @@ package org.apache.openjpa.enhance;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class UnenhancedMany implements Serializable, Cloneable {

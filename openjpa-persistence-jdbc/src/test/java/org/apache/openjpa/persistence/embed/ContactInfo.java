@@ -21,10 +21,10 @@ package org.apache.openjpa.persistence.embed;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Embeddable
 public class ContactInfo {

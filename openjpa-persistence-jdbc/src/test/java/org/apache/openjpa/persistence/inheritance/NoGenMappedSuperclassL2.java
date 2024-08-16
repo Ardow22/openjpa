@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.inheritance;
 
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class NoGenMappedSuperclassL2

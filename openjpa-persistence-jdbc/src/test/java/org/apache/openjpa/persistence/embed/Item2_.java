@@ -23,10 +23,10 @@
 
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.metamodel.MapAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.MapAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.embed.Item2.class)
 public class Item2_ {
     public static volatile SingularAttribute<Item2,Integer> id;

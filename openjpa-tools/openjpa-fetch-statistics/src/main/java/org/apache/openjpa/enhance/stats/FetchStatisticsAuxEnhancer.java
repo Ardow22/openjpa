@@ -28,13 +28,9 @@ import org.apache.openjpa.meta.AccessCode;
 import org.apache.openjpa.meta.ClassMetaData;
 import org.apache.openjpa.meta.FieldMetaData;
 
-import org.apache.openjpa.util.asm.AsmHelper;
-import org.apache.xbean.asm9.Opcodes;
-import org.apache.xbean.asm9.Type;
-import org.apache.xbean.asm9.tree.ClassNode;
-import org.apache.xbean.asm9.tree.InsnList;
-import org.apache.xbean.asm9.tree.MethodInsnNode;
-import org.apache.xbean.asm9.tree.MethodNode;
+import serp.bytecode.BCClass;
+import serp.bytecode.BCMethod;
+import serp.bytecode.Code;
 
 /**
  * FetchStatisticsAuxEnhancer adds the call back function to each persistent fields in the persistent entity which
@@ -46,35 +42,30 @@ public class FetchStatisticsAuxEnhancer implements AuxiliaryEnhancer {
         + "(pc(.)*DetachedState)?(pc(.)*EnhancementContractVersion)?(pc(.)*ManagedFieldCount)?(pc(.)*GetVersion)?";
 
     @Override
-    public void run(ClassNode classNode, ClassMetaData cmd) {
-        addEnhancement(classNode, cmd);
+    public void run(BCClass bcc, ClassMetaData cmd) {
+        addEnhancement(bcc, cmd);
     }
 
     @Override
-    public boolean skipEnhance(MethodNode m) {
+    public boolean skipEnhance(BCMethod arg0) {
         return false;
     }
 
-    private void addEnhancement(ClassNode classNode, ClassMetaData cmd) {
+    private void addEnhancement(BCClass bcc, ClassMetaData cmd) {
         Log log = cmd.getRepository().getConfiguration().getLog(OpenJPAConfiguration.LOG_RUNTIME);
         FetchStatsCollector.setlogger(log);
-        String className = classNode.name.replace("/", ".");
-        for (MethodNode meth : classNode.methods) {
-            String methodName = meth.name;
+        for (BCMethod meth : bcc.getMethods()) {
+            String methodName = meth.getName();
             FieldMetaData fmd = getFieldName(methodName, cmd);
             if (fmd != null && needsTracking(fmd, methodName, cmd)) {
-                String fqn = className + "." + fmd.getName();
+                String fqn = bcc.getName() + "." + fmd.getName();
                 FetchStatsCollector.registerField(fqn);
                 FetchStatsCollector.registerEntity(cmd);
 
-                InsnList instructions = new InsnList();
-
-                instructions.add(AsmHelper.getLoadConstantInsn(fqn));
-                instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC,
-                                                    Type.getInternalName(FetchStatsCollector.class),
-                                                    "hit",
-                                                    Type.getMethodDescriptor(Type.VOID_TYPE, Type.getType(String.class))));
-                meth.instructions.insert(instructions);
+                Code code = meth.getCode(false);
+                code.constant().setValue(fqn);
+                code.invokestatic().setMethod(FetchStatsCollector.class, "hit", void.class,
+                    new Class[] { String.class });
             }
         }
     }

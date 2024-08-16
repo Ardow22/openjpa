@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.puconf;
 
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
 
 import org.apache.openjpa.persistence.OpenJPAPersistence;
 import org.apache.openjpa.persistence.test.PersistenceTestCase;

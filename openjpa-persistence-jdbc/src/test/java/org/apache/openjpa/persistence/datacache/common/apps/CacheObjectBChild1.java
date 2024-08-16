@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.datacache.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class CacheObjectBChild1

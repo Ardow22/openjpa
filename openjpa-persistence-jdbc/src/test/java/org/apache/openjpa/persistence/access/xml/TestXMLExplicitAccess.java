@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.access.xml;
 
 import java.util.Date;
 
-import jakarta.persistence.Query;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.ArgumentException;
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;

@@ -53,7 +53,8 @@ import org.apache.openjpa.jdbc.meta.strats.MaxEmbeddedBlobFieldStrategy;
 import org.apache.openjpa.jdbc.meta.strats.MaxEmbeddedClobFieldStrategy;
 import org.apache.openjpa.jdbc.meta.strats.NoneDiscriminatorStrategy;
 import org.apache.openjpa.jdbc.meta.strats.PrimitiveFieldStrategy;
-import org.apache.openjpa.jdbc.meta.strats.RelationCollectionInverseKeyFieldStrategy;
+import org.apache.openjpa.jdbc.meta.strats.
+        RelationCollectionInverseKeyFieldStrategy;
 import org.apache.openjpa.jdbc.meta.strats.RelationCollectionTableFieldStrategy;
 import org.apache.openjpa.jdbc.meta.strats.RelationFieldStrategy;
 import org.apache.openjpa.jdbc.meta.strats.StateComparisonVersionStrategy;
@@ -95,16 +96,10 @@ import org.apache.openjpa.meta.QueryMetaData;
 import org.apache.openjpa.meta.SequenceMetaData;
 import org.apache.openjpa.util.InternalException;
 import org.apache.openjpa.util.MetaDataException;
-import org.apache.openjpa.util.asm.ClassNodeTracker;
-import org.apache.openjpa.util.asm.EnhancementClassLoader;
-import org.apache.openjpa.util.asm.EnhancementProject;
-import org.apache.xbean.asm9.Opcodes;
-import org.apache.xbean.asm9.Type;
-import org.apache.xbean.asm9.tree.ClassNode;
-import org.apache.xbean.asm9.tree.InsnNode;
-import org.apache.xbean.asm9.tree.MethodInsnNode;
-import org.apache.xbean.asm9.tree.MethodNode;
-import org.apache.xbean.asm9.tree.VarInsnNode;
+
+import serp.bytecode.BCClass;
+import serp.bytecode.BCClassLoader;
+import serp.bytecode.Project;
 
 /**
  * Reverse-maps a schema into class mappings and the associated java
@@ -113,7 +108,8 @@ import org.apache.xbean.asm9.tree.VarInsnNode;
  *
  * @author Abe White
  */
-public class ReverseMappingTool implements MetaDataModes, Cloneable {
+public class ReverseMappingTool
+    implements MetaDataModes, Cloneable {
 
     /**
      * Unmapped table.
@@ -185,8 +181,9 @@ public class ReverseMappingTool implements MetaDataModes, Cloneable {
     private final JDBCConfiguration _conf;
     private final Log _log;
     private final Map _tables = new HashMap();
-    private final EnhancementProject _project = new EnhancementProject();
-    private final EnhancementClassLoader _loader = new EnhancementClassLoader(_project);
+    private final Project _project = new Project();
+    private final BCClassLoader _loader = AccessController
+        .doPrivileged(J2DoPrivHelper.newBCClassLoaderAction(_project));
     private StrategyInstaller _strat = null;
     private String _package = null;
     private File _dir = null;
@@ -1043,34 +1040,15 @@ public class ReverseMappingTool implements MetaDataModes, Cloneable {
      * is given, it will be set as the superclass.
      */
     public Class generateClass(String name, Class parent) {
-        ClassNodeTracker bc = _project.loadClass(name, null);
-        if (parent != null) {
-            bc.getClassNode().superName = Type.getInternalName(parent);
-        }
-        addDefaultConstructor(bc);
+        BCClass bc = _project.loadClass(name, null);
+        if (parent != null)
+            bc.setSuperclass(parent);
+        bc.addDefaultConstructor();
 
         try {
             return Class.forName(name, false, _loader);
         } catch (ClassNotFoundException cnfe) {
             throw new InternalException(cnfe.toString(), cnfe);
-        }
-    }
-
-    private void addDefaultConstructor(ClassNodeTracker cnt) {
-        ClassNode classNode = cnt.getClassNode();
-        // find the default constructor
-        final boolean hasDefaultCt = classNode.methods.stream()
-                .anyMatch(m -> m.name.equals("<init>") && m.desc.equals("()V"));
-        if (!hasDefaultCt) {
-            MethodNode ctNode = new MethodNode(Opcodes.ACC_PUBLIC,
-                                               "<init>",
-                                               Type.getMethodDescriptor(Type.VOID_TYPE),
-                                               null, null);
-            ctNode.instructions.add(new VarInsnNode(Opcodes.ALOAD, 0));
-            ctNode.instructions.add(new MethodInsnNode(Opcodes.INVOKESPECIAL, classNode.superName,
-                                                       "<init>", "()V"));
-            ctNode.instructions.add(new InsnNode(Opcodes.RETURN));
-            classNode.methods.add(ctNode);
         }
     }
 
@@ -2298,7 +2276,7 @@ public class ReverseMappingTool implements MetaDataModes, Cloneable {
         @Override
         public Set getImportPackages() {
             Set pkgs = super.getImportPackages();
-            pkgs.add("jakarta.persistence");
+            pkgs.add("javax.persistence");
             return pkgs;
         }
 

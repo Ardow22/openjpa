@@ -20,6 +20,7 @@ package org.apache.openjpa.persistence.datacache;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.openjpa.datacache.DataCache;

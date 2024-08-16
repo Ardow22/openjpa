@@ -19,8 +19,10 @@
 
 package org.apache.openjpa.persistence.meta;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 
@@ -31,7 +33,7 @@ public class TestMetamodelWithEnum extends SingleEMFTestCase {
         super.setUp(
                 "openjpa.RuntimeUnenhancedClasses", "unsupported",
                 "openjpa.DynamicEnhancementAgent", "false",
-                MetamodelWithEnumEntity.class, AttributeConverterImpl.class);
+                Main.class, AttributeConverterImpl.class);
     }
 
     public void testEnsureEnumDontFail() { // OPENJPA-2743
@@ -48,6 +50,30 @@ public class TestMetamodelWithEnum extends SingleEMFTestCase {
         @Override
         public MyEnum convertToEntityAttribute(final String s) {
             return MyEnum.valueOf(s);
+        }
+    }
+
+    @Entity
+    public static class Main {
+        @Id
+        private String id;
+
+        private MyEnum enumColumn;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(final String id) {
+            this.id = id;
+        }
+
+        public MyEnum getEnumColumn() {
+            return enumColumn;
+        }
+
+        public void setEnumColumn(final MyEnum enumColumn) {
+            this.enumColumn = enumColumn;
         }
     }
 

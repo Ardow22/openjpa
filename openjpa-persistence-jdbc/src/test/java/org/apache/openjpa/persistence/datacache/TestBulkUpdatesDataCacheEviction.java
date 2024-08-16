@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.datacache;
 
-import jakarta.persistence.Cache;
-import jakarta.persistence.EntityManager;
+import javax.persistence.Cache;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;
 import org.apache.openjpa.persistence.OpenJPAEntityManagerSPI;

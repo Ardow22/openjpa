@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.query.common.apps;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 /**
  * <p>Application identity type with a compound primary key.</p>

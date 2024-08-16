@@ -19,8 +19,8 @@
 
 package org.apache.openjpa.persistence.enhance.common.apps;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 
 @Entity
 public class IDOwningClassTestEntity {

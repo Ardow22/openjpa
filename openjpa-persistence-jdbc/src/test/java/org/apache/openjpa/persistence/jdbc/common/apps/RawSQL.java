@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.jdbc.common.apps;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Used in testing; should be enhanced.

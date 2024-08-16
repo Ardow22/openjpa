@@ -23,7 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
 
 import org.apache.openjpa.meta.MetaDataRepository;
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.merge;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.merge.model.Toy;
 import org.apache.openjpa.persistence.merge.model.ToyBox;

@@ -24,7 +24,7 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

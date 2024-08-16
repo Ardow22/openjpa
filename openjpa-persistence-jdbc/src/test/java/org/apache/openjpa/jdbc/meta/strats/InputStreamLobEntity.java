@@ -20,8 +20,8 @@ package org.apache.openjpa.jdbc.meta.strats;
 
 import java.io.InputStream;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.openjpa.persistence.Persistent;
 

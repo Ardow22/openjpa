@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.embed.compositepk;
 
 import java.io.Serializable;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "SUBJECT")

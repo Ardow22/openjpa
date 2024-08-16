@@ -40,10 +40,8 @@ import org.apache.openjpa.lib.util.ClassUtil;
 import org.apache.openjpa.lib.util.Files;
 import org.apache.openjpa.lib.util.J2DoPrivHelper;
 import org.apache.openjpa.lib.util.Localizer;
-import org.apache.xbean.asm9.ClassReader;
-import org.apache.xbean.asm9.ClassVisitor;
-import org.apache.xbean.asm9.Opcodes;
 
+import serp.bytecode.lowlevel.ConstantPoolTable;
 
 /**
  * Parser used to resolve arguments into java classes.
@@ -255,11 +253,11 @@ public class ClassArgParser {
      * Parse the names in the given metadata iterator stream, closing the
      * stream on completion.
      */
-    private void appendTypeNames(Object source, InputStream in, List<String> names) throws IOException {
+    private void appendTypeNames(Object source, InputStream in,
+        List<String> names) throws IOException {
         try {
-            if (source.toString().endsWith(".class")) {
-                names.add(getNameFromClass(in));
-            }
+            if (source.toString().endsWith(".class"))
+                names.add(getFromClass(in));
             names.addAll(getFromMetaData(new InputStreamReader(in)));
         } finally {
             try {
@@ -302,31 +300,30 @@ public class ClassArgParser {
     private String getFromClassFile(File file) throws IOException {
         FileInputStream fin = null;
         try {
-            fin = AccessController.doPrivileged(J2DoPrivHelper.newFileInputStreamAction(file));
-            return getNameFromClass(fin);
+            fin = AccessController.doPrivileged(
+                J2DoPrivHelper.newFileInputStreamAction(file));
+            return getFromClass(fin);
         } catch (PrivilegedActionException pae) {
             throw (FileNotFoundException) pae.getException();
         } finally {
-            if (fin != null) {
+            if (fin != null)
                 try {
                     fin.close();
+                } catch (IOException ioe) {
                 }
-                catch (IOException ioe) {
-                }
-            }
         }
     }
 
     /**
      * Returns the class name in the given .class bytecode.
      */
-    private String getNameFromClass(InputStream in) throws IOException {
-
-        ClassReader cr = new ClassReader(in);
-        final ClassNameScanner classNameScanner = new ClassNameScanner(Opcodes.ASM9);
-        cr.accept(classNameScanner, ClassReader.SKIP_CODE | ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
-
-        return classNameScanner.className;
+    private String getFromClass(InputStream in) throws IOException {
+        ConstantPoolTable table = new ConstantPoolTable(in);
+        int idx = table.getEndIndex();
+        idx += 2; // access flags
+        int clsEntry = table.readUnsignedShort(idx);
+        int utfEntry = table.readUnsignedShort(table.get(clsEntry));
+        return table.readString(table.get(utfEntry)).replace('/', '.');
     }
 
     /**
@@ -621,21 +618,6 @@ public class ClassArgParser {
             if (ch == '\'' || ch == '"')
                 return buf.toString();
             buf.append((char) ch);
-        }
-    }
-
-
-    public class ClassNameScanner extends ClassVisitor {
-        String className = null;
-
-        public ClassNameScanner(int api) {
-            super(api);
-        }
-
-        @Override
-        public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
-            this.className = name.replace("/", ".");
-            super.visit(version, access, name, signature, superName, interfaces);
         }
     }
 }

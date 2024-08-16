@@ -18,11 +18,11 @@
  */
 package org.apache.openjpa.persistence.jpql.joins;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.jpql.joins.Employee.class)
-@jakarta.annotation.Generated
+@javax.annotation.Generated
 (value="org.apache.openjpa.persistence.meta.AnnotationProcessor6",date="Tue Jun 03 09:14:37 CDT 2014")
 public class Employee_ {
     public static volatile SingularAttribute<Employee,Department> dept;

@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.cache.jpa.model;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Cacheable;
-import jakarta.persistence.Entity;
+import javax.persistence.Basic;
+import javax.persistence.Cacheable;
+import javax.persistence.Entity;
 
 @Entity
 @Cacheable(value = false)

@@ -19,8 +19,8 @@
 package org.apache.openjpa.persistence.jdbc.annotations;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Entity test object that uses property access mode.

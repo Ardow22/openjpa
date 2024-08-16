@@ -19,8 +19,8 @@
 
 package org.apache.openjpa.persistence.inheritance.entities.idmsc.singletable.stringdiscriminator;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 import org.apache.openjpa.persistence.inheritance.entities.testinterfaces.
     LeafD1;

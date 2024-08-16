@@ -18,13 +18,13 @@
  */
 package org.apache.openjpa.persistence.query.sqlresultmapping;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-@jakarta.persistence.Table(name = "CRT_REQUISICAO")
+@javax.persistence.Table(name = "CRT_REQUISICAO")
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class CrtRequisicaoEntity {

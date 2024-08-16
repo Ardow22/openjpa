@@ -20,12 +20,12 @@ package org.apache.openjpa.persistence.proxy.delayed.vec;
 
 import java.util.Collection;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.enhance.PersistenceCapable;
 import org.apache.openjpa.persistence.proxy.delayed.IDepartment;
 import org.apache.openjpa.persistence.proxy.delayed.IEmployee;
-import org.apache.openjpa.util.proxy.DelayedVectorProxy;
+import org.apache.openjpa.util.DelayedVectorProxy;
 
 public class TestDelayedVectorProxyDetachLite extends TestDelayedVectorProxy {
 

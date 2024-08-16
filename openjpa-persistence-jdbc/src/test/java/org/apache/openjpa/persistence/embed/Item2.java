@@ -21,10 +21,10 @@ package org.apache.openjpa.persistence.embed;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.MapKeyColumn;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.MapKeyColumn;
 
 @Entity
 public class Item2 {

@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.embed.attrOverrides;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
 
 @Embeddable
 public class JobInfo {

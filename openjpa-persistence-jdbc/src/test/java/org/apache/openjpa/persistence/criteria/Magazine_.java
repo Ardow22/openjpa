@@ -25,9 +25,9 @@ package org.apache.openjpa.persistence.criteria;
 
 import java.sql.Date;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Magazine.class)
 public class Magazine_ {
     public static volatile SingularAttribute<Magazine,Date> datePublished;

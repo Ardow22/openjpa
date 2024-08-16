@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.detach;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Entity11 {

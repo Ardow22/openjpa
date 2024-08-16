@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.jdbc.order;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OrderColumn;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OrderColumn;
 
 @Entity
 public class Player extends Person {

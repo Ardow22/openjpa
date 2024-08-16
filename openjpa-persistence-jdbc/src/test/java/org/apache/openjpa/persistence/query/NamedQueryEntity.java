@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.query;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="NamedQueryEntity.namedQuery",

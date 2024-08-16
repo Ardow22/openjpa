@@ -22,7 +22,7 @@ package org.apache.openjpa.persistence.jdbc.common.apps;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  *	<p>Persistent class used in testing.</p>

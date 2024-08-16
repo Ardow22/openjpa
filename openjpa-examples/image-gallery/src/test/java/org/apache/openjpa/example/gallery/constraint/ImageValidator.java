@@ -21,8 +21,8 @@ package org.apache.openjpa.example.gallery.constraint;
 import java.util.Arrays;
 import java.util.List;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
 
 import org.apache.openjpa.example.gallery.ImageType;
 import org.apache.openjpa.example.gallery.model.Image;

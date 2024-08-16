@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.optlockex.timestamp;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

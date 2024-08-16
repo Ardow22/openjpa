@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.relations;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

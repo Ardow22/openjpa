@@ -23,9 +23,9 @@
 
 package org.apache.openjpa.persistence.meta;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.meta.Embed0.class)
 public class Embed0_ {
     public static volatile SingularAttribute<Embed0,ImplicitFieldAccessSubclass> entity1;

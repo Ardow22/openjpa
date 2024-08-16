@@ -21,10 +21,10 @@ package org.apache.openjpa.persistence.embed.attrOverrides;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Embeddable
 public class ContactInfo {

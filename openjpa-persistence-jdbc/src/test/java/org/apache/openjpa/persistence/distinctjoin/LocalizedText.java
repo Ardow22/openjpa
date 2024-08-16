@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.distinctjoin;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Lob;
+import javax.persistence.Embeddable;
+import javax.persistence.Lob;
 
 /**
  * Embeddable for being used in  {@link Course}

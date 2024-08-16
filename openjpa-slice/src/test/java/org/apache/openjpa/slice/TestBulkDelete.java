@@ -20,7 +20,7 @@ package org.apache.openjpa.slice;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.slice.policy.UniformDistributionPolicy;
 

@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.jpql.version.type;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class ChildVersionEntity extends BaseEntity {

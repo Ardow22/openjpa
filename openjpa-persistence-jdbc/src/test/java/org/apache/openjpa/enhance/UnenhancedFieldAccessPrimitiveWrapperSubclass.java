@@ -17,9 +17,9 @@
  */
 package org.apache.openjpa.enhance;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UnenhancedFieldAccessPrimitiveWrapperSubclass

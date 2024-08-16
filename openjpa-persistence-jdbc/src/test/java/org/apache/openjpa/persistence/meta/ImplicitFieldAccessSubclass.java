@@ -21,9 +21,9 @@ package org.apache.openjpa.persistence.meta;
 
 import java.util.Map;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 /**
  * Domain class used by meta-model testing.

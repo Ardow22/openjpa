@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.inheritance.entity;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
 
 @Entity
 public class SubclassD extends MappedSuper {

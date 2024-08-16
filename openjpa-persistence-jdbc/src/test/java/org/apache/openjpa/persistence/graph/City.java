@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.graph;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * A simple persistent entity to become member of a graph.

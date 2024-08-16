@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.jdbc.common.apps;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>Embedded type used in testing.</p>

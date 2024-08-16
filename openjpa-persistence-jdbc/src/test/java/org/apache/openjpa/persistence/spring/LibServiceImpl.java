@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.spring;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.models.library.Book;
 import org.apache.openjpa.persistence.models.library.Borrower;

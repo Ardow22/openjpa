@@ -18,9 +18,10 @@
  */
 package org.apache.openjpa.persistence.compat;
 
+import java.util.Iterator;
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.conf.OpenJPAVersion;
 import org.apache.openjpa.persistence.ArgumentException;

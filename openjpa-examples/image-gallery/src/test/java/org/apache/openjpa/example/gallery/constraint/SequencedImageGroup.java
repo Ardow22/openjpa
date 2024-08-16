@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.example.gallery.constraint;
 
-import jakarta.validation.GroupSequence;
-import jakarta.validation.groups.Default;
+import javax.validation.GroupSequence;
+import javax.validation.groups.Default;
 
 /**
  * Sequenced validation group definition.  When this validation group is

@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.annotations.xml;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 /**
  * Used to test effect of metadata-complete tag.

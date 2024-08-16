@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 @Entity(name="FemUser")
 @DiscriminatorValue(value="F")

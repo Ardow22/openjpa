@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.cache.jpa.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Version;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
 /**
  * Extends UncacheableEntity but the cachable attribute will be negated by XML

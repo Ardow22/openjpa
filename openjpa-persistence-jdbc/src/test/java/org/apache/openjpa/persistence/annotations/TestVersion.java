@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.annotations;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfigurationImpl;
 import org.apache.openjpa.jdbc.meta.ClassMapping;

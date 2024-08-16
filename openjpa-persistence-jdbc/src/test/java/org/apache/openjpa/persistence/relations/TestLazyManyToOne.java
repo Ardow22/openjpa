@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.relations;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.enhance.DynamicPersistenceCapable;
 import org.apache.openjpa.enhance.PersistenceCapable;

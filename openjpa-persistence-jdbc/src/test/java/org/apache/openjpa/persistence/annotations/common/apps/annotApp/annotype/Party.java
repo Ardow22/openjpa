@@ -21,9 +21,9 @@ package
 
 import java.util.Date;
 
-import jakarta.persistence.Id;
+import javax.persistence.Id;
 
-@jakarta.persistence.MappedSuperclass
+@javax.persistence.MappedSuperclass
 public class Party {
 
     @Id

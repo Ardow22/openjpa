@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.jdbc.annotations;
 import java.awt.Point;
 import java.util.Map;
 
-import jakarta.persistence.Query;
+import javax.persistence.Query;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.meta.ClassMapping;

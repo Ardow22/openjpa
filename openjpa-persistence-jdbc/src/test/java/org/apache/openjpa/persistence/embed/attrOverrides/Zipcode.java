@@ -19,8 +19,8 @@
 package org.apache.openjpa.persistence.embed.attrOverrides;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Zipcode {

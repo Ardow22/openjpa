@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.embed;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Embeddable;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Embed_Coll_Map {

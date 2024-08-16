@@ -22,8 +22,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.sql.DataSource;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;

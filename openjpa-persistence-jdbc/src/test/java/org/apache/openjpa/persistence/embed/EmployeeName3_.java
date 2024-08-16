@@ -23,9 +23,9 @@
 
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.embed.EmployeeName3.class)
 public class EmployeeName3_ {
     public static volatile SingularAttribute<EmployeeName3,String> fName;

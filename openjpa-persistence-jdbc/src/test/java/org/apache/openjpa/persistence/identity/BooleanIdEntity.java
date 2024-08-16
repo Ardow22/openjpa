@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.identity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * An entity containing a boolean id

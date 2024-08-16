@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.embed.lazy;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.FetchType;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
 
 @Embeddable
 public class Guy {

@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.jdbc.common.apps;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class InverseKeyMapPC

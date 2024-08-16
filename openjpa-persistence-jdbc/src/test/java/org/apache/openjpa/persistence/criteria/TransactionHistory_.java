@@ -25,9 +25,9 @@ package org.apache.openjpa.persistence.criteria;
 
 import java.sql.Timestamp;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.TransactionHistory.class)
 public class TransactionHistory_ {
     public static volatile SingularAttribute<TransactionHistory,String> details;

@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.merge;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.merge.model.Car;
 import org.apache.openjpa.persistence.merge.model.Label;

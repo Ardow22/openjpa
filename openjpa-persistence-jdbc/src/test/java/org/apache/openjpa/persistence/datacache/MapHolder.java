@@ -20,10 +20,10 @@ package org.apache.openjpa.persistence.datacache;
 
 import java.util.Map;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Version;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
 @Entity(name = "MapHolder")
 public class MapHolder {

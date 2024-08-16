@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.query.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>Used in testing; should be enhanced.</p>

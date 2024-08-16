@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.lockmgr;
 
-import jakarta.persistence.LockModeType;
+import javax.persistence.LockModeType;
 
 /**
  * Test JPA 2.0 em.find(LockMode) behaviors with "mixed" lock manager.

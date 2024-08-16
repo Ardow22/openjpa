@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.enhance.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class PCClone implements Cloneable {

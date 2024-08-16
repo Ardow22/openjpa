@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.kernel;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.sql.DBDictionary;

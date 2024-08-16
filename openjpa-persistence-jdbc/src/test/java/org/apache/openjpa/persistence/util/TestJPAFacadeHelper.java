@@ -24,7 +24,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.enhance.PersistenceCapable;
 import org.apache.openjpa.kernel.StateManagerImpl;

@@ -23,9 +23,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedList;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class ComplexA {

@@ -18,11 +18,11 @@
  */
 package org.apache.openjpa.persistence.access;
 
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.Transient;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.Transient;
 
 @Embeddable
 @Access(AccessType.FIELD)

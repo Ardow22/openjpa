@@ -18,7 +18,6 @@
  */
 package org.apache.openjpa.util;
 
-import java.io.File;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.sql.Time;
@@ -48,7 +47,6 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Vector;
 
-import org.apache.openjpa.lib.util.Files;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -771,20 +769,6 @@ public class TestProxyManager {
         assertBeansEqual(orig, (CustomBean) _mgr.copyCustom(orig));
     }
 
-
-    //X @Test
-    public void testBeanClassProxy() throws Exception {
-        Class cls = CustomBean.class;
-        final String proxyClassName = ProxyManagerImpl.getProxyClassName(cls, false);
-        final byte[] bytes = _mgr.generateProxyBeanBytecode(cls, false, proxyClassName);
-        File dir = Files.getClassFile(TestProxyManager.class).getParentFile();
-
-        final String fileName = cls.getName().replace('.', '$') + "$proxy" + ".class";
-        java.nio.file.Files.write(new File(dir, fileName).toPath(), bytes);
-
-        _mgr.loadBuildTimeProxy(cls, this.getClass().getClassLoader());
-    }
-
     /**
      * Populate the given bean with arbitrary data.
      */
@@ -1017,8 +1001,6 @@ public class TestProxyManager {
     public static class CustomBean {
         private String _string;
         private int _number;
-        private double d1;
-        private double d2;
 
         public String getString() {
             return _string;
@@ -1035,20 +1017,6 @@ public class TestProxyManager {
         public void setNumber(int number) {
             _number = number;
         }
-
-        public void setLocation(double d1, double d2) {
-            this.d1 = d1;
-            this.d2 = d2;
-        }
-
-        public double getD1() {
-            return d1;
-        }
-
-        public double getD2() {
-            return d2;
-        }
-
     }
 
     /**

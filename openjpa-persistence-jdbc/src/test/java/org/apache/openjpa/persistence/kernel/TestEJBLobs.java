@@ -18,14 +18,21 @@
  */
 package org.apache.openjpa.persistence.kernel;
 
-import jakarta.persistence.EntityManager;
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.apache.openjpa.persistence.common.utils.AbstractTestCase;
 
 public class TestEJBLobs extends AbstractTestCase {
 
     private EntityManager _pm = null;
-    private EJBLobsInnerEntity _inner = null;
+    private Inner _inner = null;
 
     public TestEJBLobs(String name) {
         super(name, "kernelcactusapp");
@@ -33,7 +40,7 @@ public class TestEJBLobs extends AbstractTestCase {
 
     @Override
     public void setUp() throws Exception {
-        super.setUp(EJBLobsInnerEntity.class, EJBLobsInner2Entity.class);
+        super.setUp(Inner.class, Inner2.class);
 
         EntityManager em = currentEntityManager();
         startTx(em);
@@ -41,12 +48,12 @@ public class TestEJBLobs extends AbstractTestCase {
         endTx(em);
         endEm(em);
 
-        EJBLobsInnerEntity inner = new EJBLobsInnerEntity();
+        Inner inner = new Inner();
         inner.setString("string");
         inner.setClob("clobField");
         inner.setEBlob("eblob");
 
-        EJBLobsInner2Entity inner2 = new EJBLobsInner2Entity();
+        Inner2 inner2 = new Inner2();
         inner2.string = "inner2";
         inner.setBlob(inner2);
 
@@ -64,7 +71,7 @@ public class TestEJBLobs extends AbstractTestCase {
         endEm(_pm);
 
         _pm = currentEntityManager();
-        _inner = _pm.find(EJBLobsInnerEntity.class, "string");
+        _inner = _pm.find(Inner.class, "string");
     }
 
     public void testOtherFields() {
@@ -91,13 +98,13 @@ public class TestEJBLobs extends AbstractTestCase {
     }
 
     public void testDelete() {
-        deleteAll(EJBLobsInnerEntity.class);
+        deleteAll(Inner.class);
     }
 
     public void testUpdate() {
         startTx(_pm);
         _inner.setClob("newvalue");
-        EJBLobsInner2Entity inner2 = new EJBLobsInner2Entity();
+        Inner2 inner2 = new Inner2();
         inner2.string = "newinner2";
         _inner.setBlob(inner2);
         endTx(_pm);
@@ -106,4 +113,64 @@ public class TestEJBLobs extends AbstractTestCase {
         assertEquals("newinner2", _inner.getBlob().string);
     }
 
+    @Entity
+    @Table(name = "inntable")
+    public static class Inner {
+
+        @Id
+        private String string = null;
+        private String clobField = null;
+        private Object eblob = null;
+
+        @OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+        private Inner2 blobField = null;
+
+        public String getString() {
+            return string;
+        }
+
+        public void setString(String val) {
+            string = val;
+        }
+
+        public String getClob() {
+            return clobField;
+        }
+
+        public void setClob(String val) {
+            clobField = val;
+        }
+
+        public String getEBlob() {
+            return ((String) eblob);
+        }
+
+        public void setEBlob(String val) {
+            eblob = val;
+        }
+
+        public Inner2 getBlob() {
+            return blobField;
+        }
+
+        public void setBlob(Inner2 val) {
+            blobField = val;
+        }
+    }
+
+    @Entity
+    @Table(name="Inner2")
+    public static class Inner2 implements Serializable {
+        private static final long serialVersionUID = 1L;
+        @Id
+        public String string = null;
+
+        public String getString() {
+            return string;
+        }
+
+        public void setString(String string) {
+            this.string = string;
+        }
+    }
 }

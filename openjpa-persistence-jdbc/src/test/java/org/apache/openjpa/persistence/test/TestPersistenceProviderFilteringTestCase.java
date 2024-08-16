@@ -22,11 +22,12 @@ import org.apache.openjpa.persistence.PersistenceProviderImpl;
 import org.apache.openjpa.persistence.entity.EntityA;
 import org.apache.openjpa.persistence.entity.EntityB;
 import org.apache.openjpa.persistence.entity.EntityC;
+import org.apache.openjpa.util.UserException;
 
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.spi.PersistenceProvider;
-import jakarta.persistence.spi.PersistenceUnitInfo;
-import jakarta.persistence.spi.ProviderUtil;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.spi.PersistenceProvider;
+import javax.persistence.spi.PersistenceUnitInfo;
+import javax.persistence.spi.ProviderUtil;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,21 +53,21 @@ public class TestPersistenceProviderFilteringTestCase extends SQLListenerTestCas
     public void testGenerateSchemaOpenJPAProvider() {
         final PersistenceProviderImpl ppi = new PersistenceProviderImpl();
         final Map<Object, Object> map = new HashMap<>();
-        map.put("jakarta.persistence.provider", PersistenceProviderImpl.class.getName());
+        map.put("javax.persistence.provider", PersistenceProviderImpl.class.getName());
         assertTrue(ppi.generateSchema(persistenceUnitName, map));
     }
 
     public void testGenerateSchemaEclipseProvider() {
         final PersistenceProviderImpl ppi = new PersistenceProviderImpl();
         final Map<Object, Object> map = new HashMap<>();
-        map.put("jakarta.persistence.provider", "org.eclipse.persistence.jpa.PersistenceProvider");
+        map.put("javax.persistence.provider", "org.eclipse.persistence.jpa.PersistenceProvider");
         assertFalse(ppi.generateSchema(persistenceUnitName, map));
     }
 
     public void testGenerateSchemaFakeProviderClass() {
         final PersistenceProviderImpl ppi = new PersistenceProviderImpl();
         final Map<Object, Object> map = new HashMap<>();
-        map.put("jakarta.persistence.provider", FakeProvider.class);
+        map.put("javax.persistence.provider", FakeProvider.class);
         assertFalse(ppi.generateSchema(persistenceUnitName, map));
     }
 

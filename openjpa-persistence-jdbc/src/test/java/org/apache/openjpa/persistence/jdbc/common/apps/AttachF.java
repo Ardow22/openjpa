@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 
 @Entity

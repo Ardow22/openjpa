@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc;
 
-import jakarta.persistence.LockModeType;
+import javax.persistence.LockModeType;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.sql.DB2Dictionary;

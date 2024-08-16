@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.discriminator;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity(name="chrLeaf")
 public class CharLeafEntity

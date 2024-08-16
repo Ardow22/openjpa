@@ -18,7 +18,13 @@
  */
 package org.apache.openjpa.jira_2883;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.persistence.test.DatabasePlatform;
@@ -34,7 +40,7 @@ import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 public class TestOracleGeneratedId extends SingleEMFTestCase {
     @Override
     public void setUp() {
-        super.setUp(CLEAR_TABLES, OracleGeneratedIdEntity.class,
+        super.setUp(CLEAR_TABLES, OraGenIdData.class,
                 "openjpa.jdbc.DBDictionary", "oracle(UseTriggersForAutoAssign=true, MaxAutoAssignNameLength=28, BatchLimit=100)");
     }
 
@@ -51,4 +57,27 @@ public class TestOracleGeneratedId extends SingleEMFTestCase {
         }
     }
 
+    /**
+     * Declares a Version field of unsupported type.
+     *
+     */
+    @Entity
+    @Table(name="GeneratedId")
+    public class OraGenIdData {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id")
+        private long id;
+
+        @Column(name = "value")
+        private String value;
+
+        public long getId() {
+            return id;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
 }

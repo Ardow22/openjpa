@@ -19,7 +19,7 @@
 
 package org.apache.openjpa.enhance.stats;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 
 @Embeddable

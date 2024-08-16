@@ -18,13 +18,13 @@
  */
 package org.apache.openjpa.persistence.embed.attrOverrides;
 
-import jakarta.persistence.AssociationOverride;
-import jakarta.persistence.AssociationOverrides;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.Table;
+import javax.persistence.AssociationOverride;
+import javax.persistence.AssociationOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Table;
 
 @Entity
 @AssociationOverrides({

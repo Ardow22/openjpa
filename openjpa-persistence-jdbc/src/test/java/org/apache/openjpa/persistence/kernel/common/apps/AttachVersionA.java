@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.kernel.common.apps;
 
 import java.util.Set;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class AttachVersionA {

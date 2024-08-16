@@ -21,9 +21,9 @@ package org.apache.openjpa.persistence.meta.common.apps;
 import java.util.Collection;
 import java.util.Map;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class MetaTest2

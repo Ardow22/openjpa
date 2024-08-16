@@ -23,10 +23,10 @@
 
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.metamodel.CollectionAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.CollectionAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Phone.class)
 public class Phone_ {
     public static volatile CollectionAttribute<Phone,Employee> employees;

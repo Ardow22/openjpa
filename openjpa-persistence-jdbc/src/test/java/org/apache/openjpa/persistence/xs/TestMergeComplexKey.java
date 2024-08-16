@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.xs;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

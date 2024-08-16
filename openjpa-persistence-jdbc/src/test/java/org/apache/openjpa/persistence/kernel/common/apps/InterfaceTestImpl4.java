@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.kernel.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>Persistent type used in testing</p>

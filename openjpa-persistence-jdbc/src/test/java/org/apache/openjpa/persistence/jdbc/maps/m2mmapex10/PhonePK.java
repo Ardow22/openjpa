@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.jdbc.maps.m2mmapex10;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class PhonePK implements Serializable {

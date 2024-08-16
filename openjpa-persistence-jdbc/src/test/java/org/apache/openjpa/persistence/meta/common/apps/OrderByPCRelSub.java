@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.meta.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class OrderByPCRelSub

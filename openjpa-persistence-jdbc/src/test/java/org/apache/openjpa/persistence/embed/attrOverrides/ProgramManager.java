@@ -21,10 +21,10 @@ package org.apache.openjpa.persistence.embed.attrOverrides;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="PGM_ATTROVER")

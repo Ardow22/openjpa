@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.datacache.common.apps;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 /**
  * <p>Persitent type used in testing.</p>

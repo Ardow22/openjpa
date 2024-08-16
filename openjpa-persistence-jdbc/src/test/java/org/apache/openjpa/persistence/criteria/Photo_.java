@@ -23,9 +23,9 @@
 
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Photo.class)
 public class Photo_ {
     public static volatile SingularAttribute<Photo,Integer> id;

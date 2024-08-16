@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.embed.attrOverrides;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Basic;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class AnnoOverEmbed {

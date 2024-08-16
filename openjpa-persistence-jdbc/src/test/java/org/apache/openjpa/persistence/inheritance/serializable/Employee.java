@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.inheritance.serializable;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class Employee extends Person {

@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.kernel.common.apps;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * <p>Persistent type used in testing</p>

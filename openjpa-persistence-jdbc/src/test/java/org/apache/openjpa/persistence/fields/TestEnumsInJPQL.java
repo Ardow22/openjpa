@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.fields;
 
-import jakarta.persistence.Query;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.test.SingleEMTestCase;
 

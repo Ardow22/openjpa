@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.lockmgr;
 
 import java.util.Arrays;
 
-import jakarta.persistence.LockModeType;
+import javax.persistence.LockModeType;
 
 /**
  * Test JPA 2.0 LockMode type permutation behaviors with "mixed" lock manager.

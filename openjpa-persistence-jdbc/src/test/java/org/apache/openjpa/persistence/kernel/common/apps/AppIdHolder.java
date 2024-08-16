@@ -25,7 +25,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * Holder for one-one and one-many relations to app id hierarchy classes.

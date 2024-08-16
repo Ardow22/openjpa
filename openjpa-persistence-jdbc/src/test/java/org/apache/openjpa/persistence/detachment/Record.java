@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.detachment;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import org.apache.openjpa.persistence.Persistent;
 

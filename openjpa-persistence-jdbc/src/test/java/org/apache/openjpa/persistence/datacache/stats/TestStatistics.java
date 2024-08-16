@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.datacache.stats;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.apache.openjpa.datacache.CacheStatistics;
 import org.apache.openjpa.datacache.DataCache;

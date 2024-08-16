@@ -27,7 +27,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Vector;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * Normal class that has relations to and from various horizontal

@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.jdbc.maps.qualified.path;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Embeddable;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class PersonalInfo {

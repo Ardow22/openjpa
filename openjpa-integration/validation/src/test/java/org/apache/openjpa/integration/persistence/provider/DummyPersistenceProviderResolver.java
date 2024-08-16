@@ -20,8 +20,8 @@ package org.apache.openjpa.integration.persistence.provider;
 
 import java.util.List;
 
-import jakarta.persistence.spi.PersistenceProvider;
-import jakarta.persistence.spi.PersistenceProviderResolver;
+import javax.persistence.spi.PersistenceProvider;
+import javax.persistence.spi.PersistenceProviderResolver;
 
 public class DummyPersistenceProviderResolver implements
     PersistenceProviderResolver {

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.query;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class ManyOneEntitySub

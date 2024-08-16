@@ -27,7 +27,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.query.domain;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class Scrabble extends IndoorGame {

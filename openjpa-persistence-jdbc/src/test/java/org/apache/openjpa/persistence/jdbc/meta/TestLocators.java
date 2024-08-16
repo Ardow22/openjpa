@@ -28,6 +28,7 @@
 package org.apache.openjpa.persistence.jdbc.meta;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.sql.DBDictionary;

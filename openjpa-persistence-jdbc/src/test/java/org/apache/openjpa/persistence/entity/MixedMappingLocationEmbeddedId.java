@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.entity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Transient;
+import javax.persistence.Basic;
+import javax.persistence.Transient;
 
 public class MixedMappingLocationEmbeddedId implements Serializable {
     @Transient

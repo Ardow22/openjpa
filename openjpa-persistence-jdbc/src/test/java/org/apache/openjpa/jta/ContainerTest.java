@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.jta;
 
-import jakarta.transaction.TransactionManager;
+import javax.transaction.TransactionManager;
 
 import org.apache.openjpa.ee.ManagedRuntime;
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;

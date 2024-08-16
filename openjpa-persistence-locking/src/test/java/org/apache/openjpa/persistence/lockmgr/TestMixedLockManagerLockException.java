@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.lockmgr;
 
-import jakarta.persistence.LockModeType;
-import jakarta.persistence.OptimisticLockException;
-import jakarta.persistence.TransactionRequiredException;
+import javax.persistence.LockModeType;
+import javax.persistence.OptimisticLockException;
+import javax.persistence.TransactionRequiredException;
 
 /**
  * Test JPA 2.0 em.lock(LockMode) exception behaviors with "mixed" lock manager.

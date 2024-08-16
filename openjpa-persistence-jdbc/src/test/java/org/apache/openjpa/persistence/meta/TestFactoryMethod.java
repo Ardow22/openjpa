@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.meta;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.kernel.Broker;
 import org.apache.openjpa.meta.ClassMetaData;

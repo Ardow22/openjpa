@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.annotations;
 
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
 
 import org.apache.openjpa.persistence.test.AbstractCachedEMFTestCase;
 

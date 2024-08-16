@@ -22,9 +22,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.LockModeType;
-import jakarta.persistence.RollbackException;
+import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
+import javax.persistence.RollbackException;
 
 import org.apache.openjpa.event.RemoteCommitEvent;
 import org.apache.openjpa.event.RemoteCommitListener;

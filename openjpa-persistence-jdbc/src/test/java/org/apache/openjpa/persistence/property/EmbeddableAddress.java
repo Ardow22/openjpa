@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.property;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class EmbeddableAddress implements IAddress {

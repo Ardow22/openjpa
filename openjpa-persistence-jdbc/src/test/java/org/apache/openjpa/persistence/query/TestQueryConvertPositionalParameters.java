@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.query;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.apache.openjpa.kernel.QueryLanguages;
 import org.apache.openjpa.kernel.jpql.JPQLParser;

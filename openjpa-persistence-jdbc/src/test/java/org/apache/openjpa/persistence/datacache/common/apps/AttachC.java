@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.datacache.common.apps;
 import java.util.LinkedList;
 import java.util.List;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class AttachC

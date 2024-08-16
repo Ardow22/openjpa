@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.inheritance.entities.idmsc;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Mapped Superclass defining an integer-type primary key field.

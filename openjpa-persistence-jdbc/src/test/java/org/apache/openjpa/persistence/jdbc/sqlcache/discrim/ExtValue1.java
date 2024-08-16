@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.jdbc.sqlcache.discrim;
 
 import java.io.Serializable;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("9")

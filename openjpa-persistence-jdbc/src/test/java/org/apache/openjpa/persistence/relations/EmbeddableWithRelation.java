@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.relations;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
 
 @Embeddable
 public class EmbeddableWithRelation {

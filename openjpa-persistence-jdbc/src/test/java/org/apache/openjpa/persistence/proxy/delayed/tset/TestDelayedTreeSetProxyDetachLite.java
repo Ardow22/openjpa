@@ -20,12 +20,12 @@ package org.apache.openjpa.persistence.proxy.delayed.tset;
 
 import java.util.Collection;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.enhance.PersistenceCapable;
 import org.apache.openjpa.persistence.proxy.delayed.IDepartment;
 import org.apache.openjpa.persistence.proxy.delayed.IEmployee;
-import org.apache.openjpa.util.proxy.DelayedTreeSetProxy;
+import org.apache.openjpa.util.DelayedTreeSetProxy;
 
 public class TestDelayedTreeSetProxyDetachLite extends TestDelayedTreeSetProxy {
 

@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.lockmgr;
 
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.persistence.LockModeType;
-import jakarta.persistence.OptimisticLockException;
-import jakarta.persistence.TransactionRequiredException;
+import javax.persistence.EntityNotFoundException;
+import javax.persistence.LockModeType;
+import javax.persistence.OptimisticLockException;
+import javax.persistence.TransactionRequiredException;
 
 /**
  * Test JPA 2.0 em.find(LockMode) exception behaviors with "mixed" lock manager.

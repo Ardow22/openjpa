@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Embeddable;
+import javax.persistence.OneToOne;
 
 @Embeddable
 public class Embed_MappedToOne {

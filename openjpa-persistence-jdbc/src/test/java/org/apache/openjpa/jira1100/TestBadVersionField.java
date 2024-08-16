@@ -18,7 +18,14 @@
  */
 package org.apache.openjpa.jira1100;
 
-import jakarta.persistence.EntityManager;
+import java.math.BigDecimal;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Version;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 
@@ -36,7 +43,7 @@ import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 public class TestBadVersionField extends SingleEMFTestCase {
     @Override
     public void setUp() {
-        super.setUp(CLEAR_TABLES, BadVersionFieldEntity.class);
+        super.setUp(CLEAR_TABLES, Data.class);
     }
 
     public void testWrongVersionFieldNotSupported() {
@@ -45,6 +52,29 @@ public class TestBadVersionField extends SingleEMFTestCase {
             fail("Expected to fail with unsupported Version field type");
         } catch (Exception ex) {
 
+        }
+    }
+
+    /**
+     * Declares a Version field of unsupported type.
+     *
+     */
+    @Entity
+    @Table(name="BadVersionField")
+    public class Data {
+        @Id
+        @GeneratedValue
+        private long id;
+
+        @Version
+        private BigDecimal version;
+
+        public long getId() {
+            return id;
+        }
+
+        public BigDecimal getVersion() {
+            return version;
         }
     }
 

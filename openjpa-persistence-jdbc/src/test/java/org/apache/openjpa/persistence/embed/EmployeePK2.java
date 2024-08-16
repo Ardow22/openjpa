@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.embed;
 import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class EmployeePK2 implements Serializable {

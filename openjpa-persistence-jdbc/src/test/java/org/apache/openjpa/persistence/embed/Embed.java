@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Embed {

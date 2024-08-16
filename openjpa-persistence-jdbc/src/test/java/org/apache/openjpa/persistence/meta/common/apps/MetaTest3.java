@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.meta.common.apps;
 
 import java.util.Map;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class MetaTest3

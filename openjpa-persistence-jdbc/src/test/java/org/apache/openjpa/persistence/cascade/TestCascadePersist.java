@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.cascade;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.RollbackException;
+import javax.persistence.EntityManager;
+import javax.persistence.RollbackException;
 
 import org.apache.openjpa.persistence.test.SQLListenerTestCase;
 

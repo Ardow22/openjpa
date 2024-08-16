@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.jdbc.sqlcache;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class CombinedPKEmbeddedEntity implements Serializable {

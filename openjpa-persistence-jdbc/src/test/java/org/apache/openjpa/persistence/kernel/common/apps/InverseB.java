@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.kernel.common.apps;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "inverseB")

@@ -25,9 +25,9 @@ package org.apache.openjpa.persistence.criteria;
 
 import java.util.Date;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.DependentId.class)
 public class DependentId_ {
     public static volatile SingularAttribute<DependentId,Date> effDate;

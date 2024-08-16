@@ -23,10 +23,10 @@
 
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.metamodel.MapAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.MapAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Student.class)
 public class Student_ {
     public static volatile MapAttribute<Student,Course,Semester> enrollment;

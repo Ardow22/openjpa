@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.kernel;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.common.utils.AbstractTestCase;
 import org.apache.openjpa.persistence.kernel.common.apps.AllFieldsTypeTest;

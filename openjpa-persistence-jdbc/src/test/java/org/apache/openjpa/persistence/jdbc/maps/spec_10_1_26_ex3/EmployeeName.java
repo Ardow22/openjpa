@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.maps.spec_10_1_26_ex3;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class EmployeeName {

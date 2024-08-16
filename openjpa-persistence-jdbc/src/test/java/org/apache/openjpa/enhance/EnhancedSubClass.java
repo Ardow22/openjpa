@@ -21,7 +21,7 @@ package org.apache.openjpa.enhance;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * @see TestClassHierarchyEnhancement

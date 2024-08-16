@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.kernel;
 
-import jakarta.persistence.Persistence;
+import javax.persistence.Persistence;
 
 import org.apache.openjpa.event.BrokerFactoryEvent;
 import org.apache.openjpa.event.BrokerFactoryListener;

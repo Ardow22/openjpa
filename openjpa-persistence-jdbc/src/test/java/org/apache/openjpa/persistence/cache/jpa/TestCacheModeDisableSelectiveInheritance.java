@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.cache.jpa;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.cache.jpa.model.ChildUncacheable;
 import org.apache.openjpa.persistence.cache.jpa.model.ParentUnspecifiedEntity;
@@ -35,7 +35,7 @@ import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 public class TestCacheModeDisableSelectiveInheritance extends SingleEMFTestCase {
     Object[] params =
         new Object[] { ChildUncacheable.class, ParentUnspecifiedEntity.class, CLEAR_TABLES,
-            "jakarta.persistence.sharedCache.mode", "DISABLE_SELECTIVE", "openjpa.DataCache", "true" };
+            "javax.persistence.sharedCache.mode", "DISABLE_SELECTIVE", "openjpa.DataCache", "true" };
 
     @Override
     public void setUp() throws Exception {

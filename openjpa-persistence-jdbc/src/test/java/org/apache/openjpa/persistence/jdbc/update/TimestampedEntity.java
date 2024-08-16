@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.jdbc.update;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * An entity using a Timestamp as Version field.

@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.detach.xml;
 
 import java.util.Collection;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="AUTO_PASSENGER")

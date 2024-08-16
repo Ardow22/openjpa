@@ -24,7 +24,7 @@ package org.apache.openjpa.persistence.query.common.apps;
  * @author Abe White
  */
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class CircularFKPC2 {

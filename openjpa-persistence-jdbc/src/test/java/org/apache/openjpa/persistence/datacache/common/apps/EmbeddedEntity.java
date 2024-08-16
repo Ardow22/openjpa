@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.datacache.common.apps;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 
 import org.apache.openjpa.persistence.datacache.TestEmbeddedCollection;
 

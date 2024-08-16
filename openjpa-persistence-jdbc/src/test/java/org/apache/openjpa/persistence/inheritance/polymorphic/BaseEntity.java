@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.inheritance.polymorphic;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.Version;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 /**
  * An abstract base entity class with auto-generated identty and version field.

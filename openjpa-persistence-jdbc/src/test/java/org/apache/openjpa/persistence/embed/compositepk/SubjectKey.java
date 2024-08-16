@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.embed.compositepk;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class SubjectKey implements Serializable {

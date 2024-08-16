@@ -23,9 +23,9 @@
 
 package org.apache.openjpa.persistence.meta;
 
-import jakarta.persistence.metamodel.ListAttribute;
+import javax.persistence.metamodel.ListAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.meta.ArrayMember.class)
 public class ArrayMember_ {
     public static volatile ListAttribute<ArrayMember,Byte> Array;

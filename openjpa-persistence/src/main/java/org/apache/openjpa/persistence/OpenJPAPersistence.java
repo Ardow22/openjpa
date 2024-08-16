@@ -24,9 +24,10 @@ import java.util.Map;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+import javax.rmi.PortableRemoteObject;
 
 import org.apache.openjpa.enhance.PersistenceCapable;
 import org.apache.openjpa.kernel.Bootstrap;
@@ -34,7 +35,6 @@ import org.apache.openjpa.kernel.Broker;
 import org.apache.openjpa.lib.conf.ConfigurationProvider;
 import org.apache.openjpa.lib.util.Localizer;
 import org.apache.openjpa.util.ImplHelper;
-import org.apache.openjpa.util.UserException;
 
 /**
  * Static helper methods for JPA users.
@@ -44,11 +44,6 @@ import org.apache.openjpa.util.UserException;
  * @since 0.4.0
  */
 public class OpenJPAPersistence {
-
-    /**
-     * Set this System property to 'true' if you want to enable the EntityManager via JNDI
-     */
-    private static final String EMF_VIA_JNDI_ENABLED = "emf_via_jndi_enabled";
 
     private static final Localizer _loc =
         Localizer.forPackage(OpenJPAPersistence.class);
@@ -143,10 +138,6 @@ public class OpenJPAPersistence {
      */
     public static OpenJPAEntityManagerFactory createEntityManagerFactory
         (String jndiLocation, Context context) {
-        if (!"true".equalsIgnoreCase(System.getProperty(EMF_VIA_JNDI_ENABLED))) {
-            throw new UserException(_loc.get("jndi-disabled-exception", EMF_VIA_JNDI_ENABLED));
-        }
-
         if (jndiLocation == null)
             throw new NullPointerException("jndiLocation == null");
 
@@ -155,7 +146,8 @@ public class OpenJPAPersistence {
                 context = new InitialContext();
 
             Object o = context.lookup(jndiLocation);
-            return (OpenJPAEntityManagerFactory) o;
+            return (OpenJPAEntityManagerFactory) PortableRemoteObject.narrow(o,
+                OpenJPAEntityManagerFactory.class);
         } catch (NamingException ne) {
             throw new ArgumentException(_loc.get("naming-exception",
                 jndiLocation), new Throwable[]{ ne }, null, true);

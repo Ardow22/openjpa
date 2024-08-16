@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.jdbc.annotations;
 
 import java.awt.Point;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 import org.apache.openjpa.persistence.Persistent;
 import org.apache.openjpa.persistence.jdbc.Strategy;

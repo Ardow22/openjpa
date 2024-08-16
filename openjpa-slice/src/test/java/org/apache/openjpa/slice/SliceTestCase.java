@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.slice;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.slice.jdbc.DistributedJDBCConfiguration;
 

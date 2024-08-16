@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.jpql.version.type;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Version;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
 @Entity
 public class PrimativeShortVersionEntity implements Serializable {

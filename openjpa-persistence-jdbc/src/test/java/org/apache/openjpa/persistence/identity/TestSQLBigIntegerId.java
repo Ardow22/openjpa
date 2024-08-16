@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.identity;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

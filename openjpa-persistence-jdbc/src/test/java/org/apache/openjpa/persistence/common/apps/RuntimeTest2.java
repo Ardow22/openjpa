@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.common.apps;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 
 
 /**

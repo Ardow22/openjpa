@@ -25,10 +25,10 @@ package org.apache.openjpa.persistence.criteria;
 
 import java.sql.Timestamp;
 
-import jakarta.persistence.metamodel.ListAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.ListAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Order.class)
 public class Order_ {
     public static volatile SingularAttribute<Order,Integer> count;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.recursive;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

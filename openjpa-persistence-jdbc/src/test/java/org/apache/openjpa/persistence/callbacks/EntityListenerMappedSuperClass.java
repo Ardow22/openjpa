@@ -19,8 +19,8 @@
 
 package org.apache.openjpa.persistence.callbacks;
 
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.EntityListeners;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 @EntityListeners({ListenerImpl.class})

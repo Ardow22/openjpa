@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.jdbc.sqlcache.discrim;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class ComposedPK implements Serializable {

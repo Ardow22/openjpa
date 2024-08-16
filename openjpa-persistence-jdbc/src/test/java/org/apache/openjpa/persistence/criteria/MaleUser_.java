@@ -24,7 +24,7 @@
 package org.apache.openjpa.persistence.criteria;
 
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.MaleUser.class)
 public class MaleUser_ extends CompUser_  {
 }

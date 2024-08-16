@@ -18,6 +18,7 @@
  */
 package org.apache.openjpa.enhance;
 
+import java.io.ByteArrayInputStream;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.security.AccessController;
@@ -31,14 +32,9 @@ import org.apache.openjpa.lib.util.Localizer;
 import org.apache.openjpa.lib.util.Options;
 import org.apache.openjpa.meta.MetaDataRepository;
 import org.apache.openjpa.util.GeneralException;
-import org.apache.openjpa.util.asm.AsmHelper;
-import org.apache.openjpa.util.asm.ClassNodeTracker;
-import org.apache.openjpa.util.asm.EnhancementProject;
-import org.apache.xbean.asm9.ClassReader;
-import org.apache.xbean.asm9.ClassVisitor;
-import org.apache.xbean.asm9.Opcodes;
 
-import static java.util.Arrays.asList;
+import serp.bytecode.BCClass;
+import serp.bytecode.Project;
 
 
 /**
@@ -148,17 +144,18 @@ public class PCClassFileTransformer
             ClassLoader oldLoader = AccessController.doPrivileged(J2DoPrivHelper.getContextClassLoaderAction());
             AccessController.doPrivileged(J2DoPrivHelper.setContextClassLoaderAction(_tmpLoader));
             try {
-                EnhancementProject project = new EnhancementProject();
-                final ClassNodeTracker bc = project.loadClass(bytes, _tmpLoader);
-                PCEnhancer enhancer = new PCEnhancer(_repos.getConfiguration(), bc, _repos);
+                PCEnhancer enhancer = new PCEnhancer(_repos.getConfiguration(),
+                        new Project().loadClass(new ByteArrayInputStream(bytes),
+                                _tmpLoader), _repos);
                 enhancer.setAddDefaultConstructor(_flags.addDefaultConstructor);
                 enhancer.setEnforcePropertyRestrictions
                         (_flags.enforcePropertyRestrictions);
 
                 if (enhancer.run() == PCEnhancer.ENHANCE_NONE)
                     return null;
-                ClassNodeTracker cnt = enhancer.getPCBytecode();
-                return AsmHelper.toByteArray(cnt);
+                BCClass pcb = enhancer.getPCBytecode();
+                returnBytes = AsmAdaptor.toByteArray(pcb, pcb.toByteArray());
+                return returnBytes;
             } finally {
                 AccessController.doPrivileged(J2DoPrivHelper.setContextClassLoaderAction(oldLoader));
             }
@@ -224,46 +221,7 @@ public class PCClassFileTransformer
      * {@link PersistenceCapable}.
      */
     private static boolean isEnhanced(byte[] b) {
-        if (b == null)
-        {
-            return false;
-        }
-        final ClassReader cr = new ClassReader(b);
-        try
-        {
-            cr.accept(new ClassVisitor(Opcodes.ASM9)
-            {
-                @Override
-                public void visit(final int i, final int i1,
-                                  final String name, final String s,
-                                  final String parent, final String[] interfaces)
-                {
-                    boolean enhanced = interfaces != null && interfaces.length > 0 &&
-                            asList(interfaces).contains("org/apache/openjpa/enhance/PersistenceCapable");
-                    if (!enhanced && name != null && parent != null &&
-                            !"java/lang/Object".equals(parent) && !name.equals(parent)) {
-                        enhanced = isEnhanced(AsmHelper.getClassBytes(parent));
-                    }
-                    throw new EnhancedStatusException(enhanced);
-                }
-            }, 0);
-            return false;
-        } catch (final EnhancedStatusException e) {
-            return e.status;
-        } catch (final Exception e) {
-            return false;
-        }
-    }
-
-
-    private static class EnhancedStatusException extends RuntimeException {
-
-        private static final long serialVersionUID = 1L;
-        private final boolean status;
-
-        private EnhancedStatusException(final boolean status) {
-            this.status = status;
-        }
+        return AsmAdaptor.isEnhanced(b);
     }
 
     public static class Reentrant extends PCClassFileTransformer {

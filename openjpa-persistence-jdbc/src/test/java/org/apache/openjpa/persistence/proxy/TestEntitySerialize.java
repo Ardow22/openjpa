@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.proxy;
 
 import java.util.UUID;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;
 import org.apache.openjpa.persistence.OpenJPAPersistence;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.datacache;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.datacache.DataCacheManager;
 import org.apache.openjpa.datacache.DataCacheStoreManager;
@@ -38,10 +38,8 @@ import org.apache.openjpa.persistence.test.SingleEMFTestCase;
  */
 public class TestDataCacheStoreManager extends SingleEMFTestCase {
     Object[] p =
-        new Object[] { CLEAR_TABLES, CachedEntityStatistics.class,
-                "openjpa.DataCache", "true(EnableStatistics=true)",
-                "openjpa.QueryCache", "true",
-                "openjpa.DynamicDataStructs", "true"};
+        new Object[] { CLEAR_TABLES, CachedEntityStatistics.class, "openjpa.DataCache", "true(EnableStatistics=true)",
+            "openjpa.QueryCache", "true", };
 
     private EntityManager em;
     private DataCacheStoreManager dsm;

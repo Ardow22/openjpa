@@ -23,9 +23,9 @@
 
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Movie.class)
 public class Movie_ {
     public static volatile SingularAttribute<Movie,Integer> id;

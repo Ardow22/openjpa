@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.annotations;
 
-import jakarta.persistence.InheritanceType;
+import javax.persistence.InheritanceType;
 
 import org.apache.openjpa.persistence.OpenJPAEntityManager;
 import org.apache.openjpa.persistence.OpenJPAQuery;

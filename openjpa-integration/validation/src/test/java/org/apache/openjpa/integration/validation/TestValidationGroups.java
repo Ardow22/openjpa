@@ -23,8 +23,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 
 import org.apache.openjpa.lib.log.Log;
 import org.apache.openjpa.persistence.OpenJPAEntityManager;
@@ -324,14 +324,14 @@ public class TestValidationGroups extends AbstractPersistenceTestCase {
 
         // Configure persistence properties via map
         Map<String, Object> propMap = new HashMap<>();
-        propMap.put("jakarta.persistence.validation.group.pre-persist",
+        propMap.put("javax.persistence.validation.group.pre-persist",
             "org.apache.openjpa.integration.validation.ValGroup1," +
             "org.apache.openjpa.integration.validation.ValGroup2");
 
-        propMap.put("jakarta.persistence.validation.group.pre-update",
+        propMap.put("javax.persistence.validation.group.pre-update",
             "");
 
-        propMap.put("jakarta.persistence.validation.group.pre-remove",
+        propMap.put("javax.persistence.validation.group.pre-remove",
             "org.apache.openjpa.integration.validation.ValGroup2");
 
         OpenJPAEntityManagerFactorySPI emf = (OpenJPAEntityManagerFactorySPI)
@@ -442,9 +442,9 @@ public class TestValidationGroups extends AbstractPersistenceTestCase {
 
         // Configure persistence properties via map
         Map<String, Object> propMap = new HashMap<>();
-        propMap.put("jakarta.persistence.validation.group.pre-persist","");
+        propMap.put("javax.persistence.validation.group.pre-persist","");
 
-        propMap.put("jakarta.persistence.validation.group.pre-update","");
+        propMap.put("javax.persistence.validation.group.pre-update","");
 
         OpenJPAEntityManagerFactorySPI emf = (OpenJPAEntityManagerFactorySPI)
         OpenJPAPersistence.createEntityManagerFactory(
@@ -750,7 +750,7 @@ public class TestValidationGroups extends AbstractPersistenceTestCase {
     /**
      * verify validation occurs when the default validation group
      * is specified for the PreRemove lifecycle event via the
-     * "jakarta.persistence.validation.group.pre-remove" property.
+     * "javax.persistence.validation.group.pre-remove" property.
      */
     public void verifySpecifiedDefaultPreRemove(boolean flush) {
         OpenJPAEntityManagerFactorySPI emf = (OpenJPAEntityManagerFactorySPI)

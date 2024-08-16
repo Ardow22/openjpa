@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.enhance.common.apps;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 
 /**
  * @see TestPCSubclasser

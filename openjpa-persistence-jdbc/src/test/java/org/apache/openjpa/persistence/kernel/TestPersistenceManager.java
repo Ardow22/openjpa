@@ -35,8 +35,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityNotFoundException;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityNotFoundException;
 
 import org.apache.openjpa.kernel.BrokerFactory;
 import org.apache.openjpa.kernel.DelegatingBrokerFactory;

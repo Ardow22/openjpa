@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>Persistent type used in testing the mappingtool's buildSchema action.</p>

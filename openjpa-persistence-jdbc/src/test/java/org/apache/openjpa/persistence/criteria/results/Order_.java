@@ -21,9 +21,9 @@ package org.apache.openjpa.persistence.criteria.results;
 
 import java.util.Date;
 
-import jakarta.persistence.metamodel.SetAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
-import jakarta.persistence.metamodel.StaticMetamodel;
+import javax.persistence.metamodel.SetAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
 
 @StaticMetamodel(value = Order.class)
 public class Order_ {

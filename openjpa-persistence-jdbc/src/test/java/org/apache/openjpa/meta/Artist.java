@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.meta;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class Artist extends Person {

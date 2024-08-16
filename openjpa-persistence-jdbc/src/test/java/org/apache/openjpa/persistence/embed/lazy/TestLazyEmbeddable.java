@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.lib.jdbc.AbstractJDBCListener;
 import org.apache.openjpa.lib.jdbc.JDBCEvent;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.maps.spec_10_1_27_ex8;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class FileName {

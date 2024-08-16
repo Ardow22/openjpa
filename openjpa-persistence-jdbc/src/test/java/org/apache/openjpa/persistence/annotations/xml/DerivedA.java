@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.annotations.xml;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.NamedQuery;
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 
 /**
  * Used to test effect of metadata-complete tag.

@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.kernel;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.RollbackException;
+import javax.persistence.RollbackException;
 
 import org.apache.openjpa.jdbc.kernel.EntityA;
 import org.apache.openjpa.jdbc.kernel.EntityB;

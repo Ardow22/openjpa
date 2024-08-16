@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.inheritance.embeddable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 /**
  * This class has the same name as {@link

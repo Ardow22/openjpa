@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.jpql.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OrderColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OrderColumn;
 
 public class XMLOrderedNameEntity implements INameEntity, java.io.Serializable {
 

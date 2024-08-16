@@ -22,10 +22,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.xbean.asm9.ClassReader;
-import org.apache.xbean.asm9.ClassVisitor;
-import org.apache.xbean.asm9.Opcodes;
-
+import serp.bytecode.lowlevel.ConstantPoolTable;
 
 /**
  * ClassLoader implementation that allows classes to be temporarily
@@ -58,8 +55,7 @@ public class TemporaryClassLoader extends ClassLoader {
         // "sun." is required for JDK 1.4, which has an access check for
         // sun.reflect.GeneratedSerializationConstructorAccessor1
         if (name.startsWith("java.") || name.startsWith("javax.")
-            || name.startsWith("sun.") || name.startsWith("jdk.")
-            || name.startsWith("jakarta.") ) {
+            || name.startsWith("sun.") || name.startsWith("jdk.")) {
             return Class.forName(name, resolve, getClass().getClassLoader());
         }
 
@@ -76,15 +72,10 @@ public class TemporaryClassLoader extends ClassLoader {
                 bout.write(b, 0, n))
                 ;
             byte[] classBytes = bout.toByteArray();
-
             // To avoid classloader issues with the JVM (Sun and IBM), we
             // will not load Enums via the TemporaryClassLoader either.
             // Reference JIRA Issue OPENJPA-646 for more information.
-            ClassReader cr = new ClassReader(classBytes);
-            final AccessScanner accessScanner = new AccessScanner(Opcodes.ASM9);
-            cr.accept(accessScanner, ClassReader.SKIP_CODE | ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
-
-            if (accessScanner.isAnnotation || accessScanner.isEnum) {
+            if (isAnnotation(classBytes) || isEnum(classBytes)) {
                 try {
                     Class<?> frameworkClass = Class.forName(name, resolve,
                             getClass().getClassLoader());
@@ -106,21 +97,27 @@ public class TemporaryClassLoader extends ClassLoader {
         }
     }
 
+    /**
+     * Fast-parse the given class bytecode to determine if it is an
+     * annotation class.
+     */
+    private static boolean isAnnotation(byte[] b) {
+        if (JavaVersions.VERSION < 5)
+            return false;
+        int idx = ConstantPoolTable.getEndIndex(b);
+        int access = ConstantPoolTable.readUnsignedShort(b, idx);
+        return (access & 0x2000) != 0; // access constant for annotation type
+    }
 
-    public class AccessScanner extends ClassVisitor {
-        boolean isEnum = false;
-        boolean isAnnotation = false;
-
-        public AccessScanner(int api) {
-            super(api);
-        }
-
-        @Override
-        public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
-            isEnum = (access & Opcodes.ACC_ENUM) > 0;
-            isAnnotation = (access & Opcodes.ACC_ANNOTATION) > 0;
-
-            super.visit(version, access, name, signature, superName, interfaces);
-        }
+    /**
+     * Fast-parse the given class bytecode to determine if it is an
+     * enum class.
+     */
+    private static boolean isEnum(byte[] b) {
+        if (JavaVersions.VERSION < 5)
+            return false;
+        int idx = ConstantPoolTable.getEndIndex(b);
+        int access = ConstantPoolTable.readUnsignedShort(b, idx);
+        return (access & 0x4000) != 0; // access constant for enum type
     }
 }

@@ -21,8 +21,8 @@ package org.apache.openjpa.enhance.ids;
 import java.util.List;
 import java.util.Random;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

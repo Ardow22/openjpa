@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.inheritance;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.inheritance.entities.EntityMapping;
 import org.apache.openjpa.persistence.inheritance.entities.EntityMapping.

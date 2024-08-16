@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.delimited.identifiers;
 
 import java.util.List;
 
-import jakarta.persistence.Query;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.OpenJPAEntityManager;
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;

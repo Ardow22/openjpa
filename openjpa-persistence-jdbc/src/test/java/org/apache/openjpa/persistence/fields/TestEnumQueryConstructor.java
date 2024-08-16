@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.fields;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.test.SingleEMTestCase;
 

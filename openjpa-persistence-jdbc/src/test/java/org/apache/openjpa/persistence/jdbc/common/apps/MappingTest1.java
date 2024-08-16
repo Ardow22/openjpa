@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  *	<p>Persistent type used for testing.</p>

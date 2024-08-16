@@ -20,11 +20,11 @@ package org.apache.openjpa.persistence.criteria.multiselect;
 
 import java.util.Date;
 
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=FactWorkAssignment.class)
-@jakarta.annotation.Generated
+@javax.annotation.Generated
 (value="org.apache.openjpa.persistence.meta.AnnotationProcessor6",date="Mon Feb 23 16:16:50 MST 2015")
 public class FactWorkAssignment_ {
     public static volatile SingularAttribute<FactWorkAssignment,String> clockNumber;

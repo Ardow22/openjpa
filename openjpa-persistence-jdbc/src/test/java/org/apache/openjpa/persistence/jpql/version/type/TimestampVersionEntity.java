@@ -21,9 +21,9 @@ package org.apache.openjpa.persistence.jpql.version.type;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Version;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Version;
 
 @Entity
 public class TimestampVersionEntity implements Serializable {

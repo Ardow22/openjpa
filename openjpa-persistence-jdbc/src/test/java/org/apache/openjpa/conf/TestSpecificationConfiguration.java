@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.conf;
 
-import jakarta.persistence.PersistenceException;
+import javax.persistence.PersistenceException;
 
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;
 import org.apache.openjpa.persistence.OpenJPAPersistence;

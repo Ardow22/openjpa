@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.kernel.common.apps;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>A persistence-aware type that should be enhanced.</p>

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.conf;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.lib.conf.Value;
 import org.apache.openjpa.meta.ClassMetaData;

@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.lockmgr;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.LockModeType;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
+import javax.persistence.Query;
 
 import org.apache.openjpa.jdbc.sql.DB2Dictionary;
 import org.apache.openjpa.persistence.FetchPlan;

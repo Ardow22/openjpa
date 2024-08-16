@@ -17,7 +17,7 @@
  * under the License.
  */
 package org.apache.openjpa.persistence;
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Embed {

@@ -23,13 +23,13 @@
 
 package org.apache.openjpa.persistence.criteria;
 
-import jakarta.persistence.metamodel.ListAttribute;
-import jakarta.persistence.metamodel.SetAttribute;
-import jakarta.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.ListAttribute;
+import javax.persistence.metamodel.SetAttribute;
+import javax.persistence.metamodel.SingularAttribute;
 
 import org.apache.openjpa.persistence.criteria.Customer.CreditRating;
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Customer.class)
 public class Customer_ {
     public static volatile SingularAttribute<Customer,Long> accountNum;

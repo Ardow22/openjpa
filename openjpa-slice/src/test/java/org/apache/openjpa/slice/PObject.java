@@ -20,8 +20,8 @@ package org.apache.openjpa.slice;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class PObject {

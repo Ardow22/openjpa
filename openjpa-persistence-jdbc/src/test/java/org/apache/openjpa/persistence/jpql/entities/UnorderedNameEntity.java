@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.jpql.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class UnorderedNameEntity implements INameEntity, java.io.Serializable {

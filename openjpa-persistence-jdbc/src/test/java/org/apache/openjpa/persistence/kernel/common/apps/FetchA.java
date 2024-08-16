@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.kernel.common.apps;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
 /**
  * A persistent entity to verify behavior of dynamically constructed FetchPlan

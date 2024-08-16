@@ -20,8 +20,8 @@ package org.apache.openjpa.xmlstore.simple;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Place implements Serializable {

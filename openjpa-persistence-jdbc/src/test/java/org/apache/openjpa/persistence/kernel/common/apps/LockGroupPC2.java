@@ -21,7 +21,7 @@ package org.apache.openjpa.persistence.kernel.common.apps;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * <p>Used to test lock-group="none" in isolation.</p>

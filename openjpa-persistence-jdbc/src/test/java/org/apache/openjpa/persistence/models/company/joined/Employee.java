@@ -20,11 +20,11 @@ package org.apache.openjpa.persistence.models.company.joined;
 
 import java.util.Date;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.OneToOne;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
 import org.apache.openjpa.persistence.models.company.ICompany;
 import org.apache.openjpa.persistence.models.company.IEmployee;

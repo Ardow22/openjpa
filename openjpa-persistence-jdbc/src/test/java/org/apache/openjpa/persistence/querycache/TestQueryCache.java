@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.querycache;
 
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.NamedQuery;
+import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
 
 import org.apache.openjpa.datacache.ConcurrentQueryCache;
 import org.apache.openjpa.persistence.querycache.common.apps.Entity1;

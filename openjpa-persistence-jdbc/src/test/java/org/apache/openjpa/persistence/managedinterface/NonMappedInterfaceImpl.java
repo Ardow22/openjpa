@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.managedinterface;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class NonMappedInterfaceImpl

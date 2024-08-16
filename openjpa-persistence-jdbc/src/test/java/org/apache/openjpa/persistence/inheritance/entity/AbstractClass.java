@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.inheritance.entity;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public abstract class AbstractClass {

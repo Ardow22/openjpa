@@ -21,11 +21,11 @@ package org.apache.openjpa.persistence.jdbc.query.domain;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  * Simple persistent entity as a target of bi-directional one-to-one

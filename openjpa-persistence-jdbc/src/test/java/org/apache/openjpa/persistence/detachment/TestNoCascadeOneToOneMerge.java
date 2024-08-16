@@ -19,7 +19,7 @@
 
 package org.apache.openjpa.persistence.detachment;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.detachment.model.SimpleA;
 import org.apache.openjpa.persistence.detachment.model.SimpleB;

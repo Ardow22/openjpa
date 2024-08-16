@@ -19,9 +19,9 @@
 
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Embeddable

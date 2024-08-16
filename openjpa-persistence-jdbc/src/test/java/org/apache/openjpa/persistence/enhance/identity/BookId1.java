@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.enhance.identity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 
 /**

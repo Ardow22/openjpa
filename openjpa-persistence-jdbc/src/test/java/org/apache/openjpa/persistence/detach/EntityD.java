@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.detach;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="EntityD_detach")

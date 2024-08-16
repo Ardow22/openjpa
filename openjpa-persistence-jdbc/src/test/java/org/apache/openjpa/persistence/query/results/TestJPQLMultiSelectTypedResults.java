@@ -25,8 +25,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.criteria.Person;
 import org.apache.openjpa.persistence.criteria.results.Bar;

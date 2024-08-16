@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.models.company.fetchlazy;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 
 import org.apache.openjpa.persistence.models.company.IPartTimeEmployee;
 

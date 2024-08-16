@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.proxy.delayed;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Award implements Serializable, Comparable<Award>{

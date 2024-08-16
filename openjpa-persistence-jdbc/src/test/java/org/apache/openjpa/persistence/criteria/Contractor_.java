@@ -24,7 +24,7 @@
 package org.apache.openjpa.persistence.criteria;
 
 
-@jakarta.persistence.metamodel.StaticMetamodel
+@javax.persistence.metamodel.StaticMetamodel
 (value=org.apache.openjpa.persistence.criteria.Contractor.class)
 public class Contractor_ extends Person_  {
 }

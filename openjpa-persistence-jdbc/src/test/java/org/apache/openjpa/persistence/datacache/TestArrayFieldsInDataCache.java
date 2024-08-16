@@ -20,7 +20,7 @@ package org.apache.openjpa.persistence.datacache;
 
 import java.util.Arrays;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.datacache.DataCache;
 import org.apache.openjpa.kernel.PCData;

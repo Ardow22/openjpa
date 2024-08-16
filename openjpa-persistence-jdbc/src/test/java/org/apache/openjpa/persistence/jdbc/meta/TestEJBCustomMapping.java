@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jdbc.meta;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.jdbc.common.apps.CustomMappingPC;
 

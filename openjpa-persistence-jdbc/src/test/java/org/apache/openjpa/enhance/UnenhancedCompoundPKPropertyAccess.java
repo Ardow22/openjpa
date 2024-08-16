@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.enhance;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 
 import org.apache.openjpa.enhance.UnenhancedCompoundPKPropertyAccess.PK;
 

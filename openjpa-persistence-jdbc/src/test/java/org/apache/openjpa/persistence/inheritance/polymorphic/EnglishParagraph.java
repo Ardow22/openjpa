@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.inheritance.polymorphic;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 /**
  * A persistent class derived from an abstract persistent class and

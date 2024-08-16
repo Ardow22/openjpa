@@ -27,7 +27,7 @@
     <parent>
         <groupId>org.apache.openjpa</groupId>
         <artifactId>openjpa-parent</artifactId>
-        <version>4.0.1-SNAPSHOT</version>
+        <version>3.2.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>openjpa-lib</artifactId>
@@ -70,13 +70,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.xbean</groupId>
-            <artifactId>xbean-asm9-shaded</artifactId>
-            <version>${xbean.version}</version>
+            <groupId>net.sourceforge.serp</groupId>
+            <artifactId>serp</artifactId>
         </dependency>
         <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-validation_1.1_spec</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.jta;
 
-import jakarta.transaction.NotSupportedException;
-import jakarta.transaction.SystemException;
-import jakarta.transaction.TransactionManager;
+import javax.transaction.NotSupportedException;
+import javax.transaction.SystemException;
+import javax.transaction.TransactionManager;
 
 import org.apache.openjpa.ee.ManagedRuntime;
 /**

@@ -21,9 +21,9 @@ package org.apache.openjpa.meta;
 import java.io.Serializable;
 import java.util.Collection;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Person implements Serializable {

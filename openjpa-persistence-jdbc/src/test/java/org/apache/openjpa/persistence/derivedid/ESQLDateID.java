@@ -20,8 +20,8 @@ package org.apache.openjpa.persistence.derivedid;
 
 import java.sql.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 @Entity
 public class ESQLDateID {
     @Id

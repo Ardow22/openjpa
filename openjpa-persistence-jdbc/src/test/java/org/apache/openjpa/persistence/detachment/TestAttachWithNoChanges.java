@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.detachment;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.OptimisticLockException;
+import javax.persistence.EntityManager;
+import javax.persistence.OptimisticLockException;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 

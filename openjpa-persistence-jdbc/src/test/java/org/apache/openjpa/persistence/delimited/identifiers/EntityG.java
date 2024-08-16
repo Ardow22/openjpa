@@ -18,9 +18,9 @@
  */
 package org.apache.openjpa.persistence.delimited.identifiers;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="\"entity g\"", schema="\"delim id\"")

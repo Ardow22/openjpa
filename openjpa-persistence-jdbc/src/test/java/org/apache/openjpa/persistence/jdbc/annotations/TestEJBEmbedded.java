@@ -22,7 +22,7 @@ import java.sql.Types;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.jdbc.conf.JDBCConfiguration;
 import org.apache.openjpa.jdbc.meta.ClassMapping;

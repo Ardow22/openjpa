@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.hugariannotation;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Created by IntelliJ IDEA.

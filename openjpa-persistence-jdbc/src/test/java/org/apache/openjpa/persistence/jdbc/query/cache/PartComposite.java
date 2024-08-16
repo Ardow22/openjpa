@@ -21,9 +21,9 @@ package org.apache.openjpa.persistence.jdbc.query.cache;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.OneToMany;
 
 import org.apache.openjpa.persistence.DataCache;
 

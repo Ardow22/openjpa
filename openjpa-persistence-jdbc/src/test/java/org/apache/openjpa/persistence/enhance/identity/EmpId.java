@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.enhance.identity;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 public class EmpId {
     int empId;

@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.tools.maven.testentity;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 @Entity
 public class Person {

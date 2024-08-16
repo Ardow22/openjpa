@@ -18,10 +18,10 @@
  */
 package org.apache.openjpa.persistence.proxy.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="ADDRESS_ANNUITY")

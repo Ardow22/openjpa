@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.simple;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class EntityWithTimestampPK {

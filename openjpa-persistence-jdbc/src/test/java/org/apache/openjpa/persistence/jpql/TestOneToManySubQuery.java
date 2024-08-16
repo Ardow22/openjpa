@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.jpql;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.persistence.test.SingleEMFTestCase;
 import org.apache.openjpa.persistence.util.EagerEmbed;

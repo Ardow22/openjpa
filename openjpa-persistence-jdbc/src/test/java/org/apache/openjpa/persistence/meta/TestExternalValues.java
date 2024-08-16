@@ -22,8 +22,8 @@ package org.apache.openjpa.persistence.meta;
 import java.util.List;
 import java.util.UUID;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.apache.openjpa.persistence.ArgumentException;
 import org.apache.openjpa.persistence.OpenJPAEntityManager;

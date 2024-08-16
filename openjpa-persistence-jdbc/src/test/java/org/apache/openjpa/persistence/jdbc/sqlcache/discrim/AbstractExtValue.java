@@ -20,10 +20,10 @@ package org.apache.openjpa.persistence.jdbc.sqlcache.discrim;
 
 import java.io.Serializable;
 
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.INTEGER, name = "EXTDISCR")

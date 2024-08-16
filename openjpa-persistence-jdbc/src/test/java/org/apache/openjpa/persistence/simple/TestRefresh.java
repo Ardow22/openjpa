@@ -21,8 +21,8 @@ package org.apache.openjpa.persistence.simple;
 import java.util.HashMap;
 import java.util.Map;
 
-import jakarta.persistence.CacheRetrieveMode;
-import jakarta.persistence.CacheStoreMode;
+import javax.persistence.CacheRetrieveMode;
+import javax.persistence.CacheStoreMode;
 
 import org.apache.openjpa.persistence.JPAProperties;
 import org.apache.openjpa.persistence.OpenJPAEntityManager;

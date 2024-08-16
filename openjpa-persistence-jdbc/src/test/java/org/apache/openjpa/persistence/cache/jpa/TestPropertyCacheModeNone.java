@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jakarta.persistence.Cache;
+import javax.persistence.Cache;
 
 import org.apache.openjpa.lib.jdbc.JDBCListener;
 import org.apache.openjpa.persistence.OpenJPAEntityManagerFactorySPI;
@@ -42,7 +42,7 @@ public class TestPropertyCacheModeNone extends AbstractCacheModeTestCase {
     public OpenJPAEntityManagerFactorySPI getEntityManagerFactory() {
         if (emf == null) {
             Map<String, Object> propertyMap = new HashMap<>();
-            propertyMap.put("jakarta.persistence.sharedCache.mode", "NONE");
+            propertyMap.put("javax.persistence.sharedCache.mode", "NONE");
             emf = createEntityManagerFactory("cache-mode-empty", propertyMap);
             assertNotNull(emf);
             cache = emf.getCache();

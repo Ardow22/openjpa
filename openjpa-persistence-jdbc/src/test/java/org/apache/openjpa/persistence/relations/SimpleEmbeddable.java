@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.relations;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class SimpleEmbeddable {

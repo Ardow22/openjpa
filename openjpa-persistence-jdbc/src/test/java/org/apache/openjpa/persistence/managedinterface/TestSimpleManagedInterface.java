@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.managedinterface;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 
 import org.apache.openjpa.kernel.AbstractBrokerFactory;
 import org.apache.openjpa.meta.ClassMetaData;

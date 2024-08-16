@@ -18,7 +18,7 @@
  */
 package org.apache.openjpa.persistence.util;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class MapKeyEmbed {

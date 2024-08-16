@@ -18,8 +18,8 @@
  */
 package org.apache.openjpa.persistence.embed;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Embeddable
 public class Embed_Embed_ToMany {

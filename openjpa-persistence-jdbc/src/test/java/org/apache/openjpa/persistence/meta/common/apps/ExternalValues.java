@@ -20,9 +20,9 @@ package org.apache.openjpa.persistence.meta.common.apps;
 
 
 import java.util.UUID;
-import jakarta.persistence.Convert;
+import javax.persistence.Convert;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 import org.apache.openjpa.persistence.Externalizer;
 import org.apache.openjpa.persistence.Factory;
