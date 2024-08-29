@@ -108,13 +108,13 @@
                     <!-- persistenceXmlFile>${project.basedir}/src/test/resources/META-INF/persistence.xml</persistenceXmlFile-->
                 </configuration>
                 <executions>
-                    <execution>
+                    <!--<execution>
                         <id>enhancer</id>
                         <phase>process-test-classes</phase>
                         <goals>
                             <goal>test-enhance</goal>
                        </goals>
-                    </execution>
+                    </execution>-->
                 </executions>
                 <dependencies>
                     <dependency>

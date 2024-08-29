@@ -204,7 +204,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
-                    <execution>
+                    <!--<execution>
                         <phase>process-test-classes</phase>
                         <configuration>
                             <target>
@@ -221,7 +221,7 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
-                    </execution>
+                    </execution>-->
                 </executions>
             </plugin>
 
