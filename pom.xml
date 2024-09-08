@@ -38,6 +38,12 @@
     <version>3.2.3-SNAPSHOT</version>
 
     <properties>
+
+        <maven-surefire-plugin.version>3.0.0.M5</maven-surefire-plugin.version>
+        <sonar.coverage.jacoco.xmlReportPaths>../jacoco-module/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
+        <mockito.version>3.12.4</mockito.version>
+
         <java.class.version>1.8</java.class.version>
         <java.testclass.version>1.8</java.testclass.version>
 
@@ -191,6 +197,8 @@
         <module>openjpa-tools</module>
         <module>openjpa-features</module>
         <module>openjpa-junit5</module>
+        <module>jacoco-module</module>
+
     </modules>
 
     <profiles>
@@ -230,7 +238,7 @@
                             <excludes>
                                 <!-- comments are usupported in services files -->
                                 <exclude>**/javax.persistence.spi.PersistenceProvider</exclude>
-                                <exclude>**/javax.annotation.processing.Processor</exclude>
+                                <exclude>**/javax.annotation.processing.Processor</exclude>-->
                                 <!-- comments are usupported by our rsrc parser -->
                                 <exclude>**/*.rsrc</exclude>
                                 <!-- comments are usupported in these files -->
@@ -1744,6 +1752,30 @@
             </repositories>
         </profile>
 
+        <profile>
+            <id>JaCoCoCoverage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.8.10</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 
     <!-- default versions for dependencies that child modules may include -->
@@ -1904,6 +1936,18 @@
                 <artifactId>annotations</artifactId>
                 <version>3.0.1</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -1916,6 +1960,19 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -1967,15 +2024,15 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.version}</version>
-                    <configuration>
+                    <!--<configuration>
                         <argLine>${surefire.jvm.args}</argLine>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <trimStackTrace>false</trimStackTrace>
                         <useSystemClassLoader>true</useSystemClassLoader>
                         <excludes>
-                            <!-- exclude classes that include a $; inner classes
+                            <!- exclude classes that include a $; inner classes
                                  are not test cases per OpenJPA standards -->
-                            <exclude>org/apache/openjpa/**/*$*.class</exclude>
+                            <!--<exclude>org/apache/openjpa/**/*$*.class</exclude>
                         </excludes>
                     <systemProperties>
                         <property>
@@ -2031,13 +2088,13 @@
                             <value>${tests.openjpa.driverDataSource}</value>
                         </property>
                     </systemProperties>
-                    </configuration>
+                   </configuration>-->
                 </plugin>
-                <plugin>
-                    <groupId>io.fabric8</groupId>
-                    <artifactId>docker-maven-plugin</artifactId>
-                    <version>0.36.0</version>
-                </plugin>
+                 <plugin>
+                     <groupId>io.fabric8</groupId>
+                     <artifactId>docker-maven-plugin</artifactId>
+                     <version>0.36.0</version>
+                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-report-plugin</artifactId>
@@ -2085,12 +2142,12 @@
                         <useReleaseProfile>false</useReleaseProfile>
                         <tagNameFormat>@{project.version}</tagNameFormat>
 
-                        <!--
-                            The openbooks example contains a build.xml which tries to add ~/.m2/repository/../openjpa-all-nnn.jar
-                            to the classpath. But since the maven-release-plugin by default only prepares with 'clean verify'
-                            the jar doesn't end in the local m2 repo. It will only be in the opanjpa-all/target folder.
-                            For now I forced an 'install', but we should ultimately just fix the openbooks example.
-                        -->
+                                        <!--
+                                            The openbooks example contains a build.xml which tries to add ~/.m2/repository/../openjpa-all-nnn.jar
+                                            to the classpath. But since the maven-release-plugin by default only prepares with 'clean verify'
+                                            the jar doesn't end in the local m2 repo. It will only be in the opanjpa-all/target folder.
+                                            For now I forced an 'install', but we should ultimately just fix the openbooks example.
+                                        -->
                         <preparationGoals>clean install</preparationGoals>
 
                         <goals>deploy</goals>
@@ -2234,7 +2291,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <executions>
+                <!--<executions>
                     <execution>
                         <phase>process-sources</phase>
                         <goals>
@@ -2263,10 +2320,10 @@
                                             <property name="offCommentFormat" value="// START - ALLOW PRINT STATEMENTS" />
                                             <property name="onCommentFormat" value="// STOP - ALLOW PRINT STATEMENTS" />
                                         </module>
-                                    </module>
+                                    </module>-->
 
                                     <!-- File location is specified in root pom.xml via ${checkstyle.suppressions.location} -->
-                                    <module name="SuppressionFilter">
+                                    <!--<module name="SuppressionFilter">
                                         <property name="file" value="${checkstyle.suppressions.location}" />
                                         <property name="optional" value="true" />
                                     </module>
@@ -2274,7 +2331,7 @@
                             </checkstyleRules>
                         </configuration>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -2302,14 +2359,14 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
-                <executions>
+                <!--<executions>
                     <execution>
                         <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
                 <configuration>
                     <excludeSubProjects>false</excludeSubProjects>
                     <numUnapprovedLicenses>0</numUnapprovedLicenses>

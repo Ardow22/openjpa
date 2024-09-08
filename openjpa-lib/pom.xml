@@ -36,6 +36,14 @@
     <description>OpenJPA Utilities Library</description>
 
     <dependencies>
+
+        <!--<dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.5.1</version>
+            <type>maven-plugin</type>
+        </dependency>-->
+
         <dependency>
             <groupId>jakarta-regexp</groupId>
             <artifactId>jakarta-regexp</artifactId>
@@ -82,6 +90,28 @@
 
     <build>
         <plugins>
+
+            <!--<plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.5.1</version>
+                <configuration>
+                    <targetClasses>
+                        <param>org.apache.openjpa.lib.util.ClassUtil</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>org.apache.openjpa.lib.util.ClassUtilTest</param>
+                    </targetTests>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+
             <!--
                 get the git revision number and set it in the git.revision setting - disabled for now
                 since we need to be able to build from sources zip (when there is no .git/config)
@@ -89,60 +119,94 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>set git version</id>
-                        <phase>compile</phase>
-                        <configuration>
-                            <target>
-                                <!-- SVN would have appended 'M' to the end of the revision number if there were
-                                     uncommitted changes.  Git doesn't do that, so we have to work a bit to
-                                     emulate that behavior.  -->
-                                <echo>Determining if there are uncommitted changes...</echo>
-                                <exec outputproperty="git.diff.exitval" resultproperty="diff.state" failonerror="false" failifexecutionfails="false" executable="git">
-                                    <arg line="diff --quiet HEAD" />
-                                </exec>
-                                <exec outputproperty="git.diff.cached.exitval" resultproperty="diff.state.cached" failonerror="false" failifexecutionfails="false" executable="git">
-                                    <arg line="diff --cached --quiet HEAD" />
-                                </exec>
-                                <condition property="uncommitted.changes" value="M" else="">
-                                    <or>
-                                        <equals arg1="${diff.state}" arg2="1" />
-                                        <equals arg1="${diff.state.cached}" arg2="1" />
-                                    </or>
-                                </condition>
-                                
-                                <echo>Getting the 'GIT' revision value</echo>
-                                <exec outputproperty="git.revision" failonerror="false" failifexecutionfails="false" executable="git">
-                                    <arg line="rev-parse --short=7 HEAD" />
-                                </exec>
-                                <echo>Revision: ${git.revision}${uncommitted.changes}</echo>
-
-                                <echo>Getting the 'PCEnhancer' revision value</echo>
-                                <exec outputproperty="pcenhancer.git.revision" failonerror="false" failifexecutionfails="false" executable="git" append="false">
-                                    <arg line="rev-parse --short=7 HEAD:./../openjpa-kernel/src/main/java/org/apache/openjpa/enhance/PCEnhancer.java" />
-                                </exec>
-                                <echo>openjpa.enhancer.revision=${pcenhancer.git.revision}${uncommitted.changes}</echo>
-
-                                <echo>OpenJPA version: ${project.version}</echo>
-                                <condition property="outdir" value="${project.build.outputDirectory}" else="${java.io.tmpdir}/openjpamvntmp">
-                                    <available type="dir" file="${project.build.outputDirectory}" />
-                                </condition>
-                                <mkdir dir="${outdir}/META-INF" />
-
-                                <echo file="${outdir}/META-INF/org.apache.openjpa.revision.properties">
-revision.number=${git.revision}${uncommitted.changes}
-openjpa.version=${project.version}
-openjpa.enhancer.revision=${pcenhancer.git.revision}${uncommitted.changes}
-                                </echo>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
+
+   <profiles>
+
+        <profile>
+            <id>PitMutationTesting</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>1.5.1</version>
+                        <configuration>
+                            <targetClasses>
+                                <param>org.apache.openjpa.lib.util.ClassUtil</param>
+                                <param>org.apache.openjpa.lib.util.StringUtil</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>org.apache.openjpa.lib.util.ClassUtilTest</param>
+                                <param>org.apache.openjpa.lib.util.StringUtilTest</param>
+                            </targetTests>
+                            <avoidCallsTo>
+                                <avoidCallsTo>org.slf4j</avoidCallsTo>
+                            </avoidCallsTo>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>PIT Report Generation</id>
+                                <phase>test-compile</phase>
+                                <goals>
+                                    <goal>mutationCoverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <!--<profiles>
+
+        <profile>
+            <id>PitMutationTesting</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                    <withHistory>true</withHistory>
+                    <pitest.version>1.14.0</pitest.version>
+                    <pitest.history.file>${project.build.directory}/pitest.history</pitest.history.file>
+            <properties/>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>1.5.1</version>
+                        <configuration>
+                            <targetClasses>
+                                <param>org.apache.openjpa.util.ClassUtil</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>org.apache.openjpa.util.ClassUtilTest</param>
+                            </targetTests>
+                            <avoidCallsTo>
+                                <avoidCallsTo>org.slf4j</avoidCallsTo>
+                            </avoidCallsTo>
+                            <historyInputFile>${pitest.history.file}</historyInputFile>
+                            <historyOutputFile>${pitest.history.file}</historyOutputFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>PIT Report Generation</id>
+                                <phase>test-compile</phase>
+                                <goals>
+                                    <goal>mutationCoverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>-->
 </project>
