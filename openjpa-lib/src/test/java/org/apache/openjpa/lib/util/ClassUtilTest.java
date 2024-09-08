@@ -159,6 +159,16 @@ public class ClassUtilTest {
         Class<?> clazz = toClass(str, resolve, loader);
         assertEquals(new ClassUtilTest[0].getClass(), clazz);
     }
+//------------------------Casi di test per migliorare Data Flow coverage----------------------------------------------------------------
+    @Test
+    public void newTestMulti(){
+        String str = "int[][]";
+        boolean resolve = true;
+        ClassLoader loader = getClass().getClassLoader();
+
+        Class<?> clazz = toClass(str, resolve, loader);
+        assertEquals(new int[0][0].getClass().clazz);
+    }
 
 
 }
