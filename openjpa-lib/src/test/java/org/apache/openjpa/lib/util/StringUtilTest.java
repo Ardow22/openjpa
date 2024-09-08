@@ -63,9 +63,9 @@ public class StringUtilTest {
         String[] actual = StringUtil.split(str, token, max);
         assertArrayEquals(expected, actual);
     }
-//------------------Casi di test per migliorare la Statement coverage, Branch coverage e Mutation coverage------------------------------
+//------------------Casi di test per migliorare la Statement coverage, Branch coverage, Mutation coverage e Data Flow coverage------------------------------
     @Test
-    public void testStringSplitFatTokenEnding() {
+    public void newTestSplitTokenLast() {
         String str = "c+I+A+O+";
         String token = "+";
         int max = Integer.MAX_VALUE;
