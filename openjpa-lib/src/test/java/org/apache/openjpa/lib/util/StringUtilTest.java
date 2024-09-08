@@ -142,6 +142,7 @@ public class StringUtilTest {
     public void newTest13() {
         String str = "Hello++";
         String stripchars = "++";
+        String expected = "Hello";
         String actual = StringUtil.stripEnd(str, stripchars);
         assertEquals(expected, actual);
     }
