@@ -45,7 +45,7 @@ public class ClassUtilTest {
         assertEquals("", actual);
     }
 
-    //-------------Casi di test per migliorare Statement coverage e Branch coverage----------------------------------------
+    //-------------Casi di test che migliorano Statement coverage, Branch coverage, Mutation coverage e Data Flow coverage----------------------------------------
     @Test
     public void newTestValidTridimGetClassName() {
         String fullName = "[[[C";
