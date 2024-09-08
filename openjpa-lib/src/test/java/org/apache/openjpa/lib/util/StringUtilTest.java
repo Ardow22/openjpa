@@ -137,6 +137,12 @@ public class StringUtilTest {
         String actual = StringUtil.stripEnd(str, stripchars);
         assertEquals(expected, actual);
     }
-
-
+//---------------Casi di test per migliorare Data Flow Coverage-----------------------------------------
+    @Test
+    public void newTest13() {
+        String str = "Hello++";
+        String stripchars = "++";
+        String actual = StringUtil.stripEnd(str, stripchars);
+        assertEquals(expected, actual);
+    }
 }
