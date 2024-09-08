@@ -167,7 +167,7 @@ public class ClassUtilTest {
         ClassLoader loader = getClass().getClassLoader();
 
         Class<?> clazz = toClass(str, resolve, loader);
-        assertEquals(new int[0][0].getClass().clazz);
+        assertEquals(new int[0][0].getClass(), clazz);
     }
 
 
